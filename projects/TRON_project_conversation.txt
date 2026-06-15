@@ -4033,3 +4033,912 @@ Response: S. Appala Raju's resume presents a strong case for a candidate with ex
 
 The resume effectively communicates S. Appala Raju's extensive experience and expertise in ferroalloy production.  However, improvements in formatting, quantifiable results, and keyword optimization would make it even more compelling to potential employers.  The level of detail regarding his experience in various processes is a significant asset.  Addressing the areas for improvement would significantly enhance the resume's effectiveness.
 
+[2025-08-20 12:00:56] Quiz Generator
+Query: quiz on embedded systems
+Response: **1. Which of the following is NOT a typical characteristic of an embedded system?**
+a) Dedicated function
+b) Real-time operation
+c) General-purpose operating system
+d) Resource-constrained environment
+
+**Answer: c) General-purpose operating system**  Embedded systems often use real-time operating systems (RTOS) or no operating system at all, prioritizing efficiency and determinism over general-purpose functionality.
+
+
+**2.  A crucial aspect of embedded system design is managing resources efficiently. Which of the following techniques is commonly used to achieve this?**
+a) Using high-level programming languages exclusively
+b) Employing complex algorithms for every task
+c) Memory management techniques like dynamic memory allocation and garbage collection
+d) Utilizing power-saving modes and low-power components
+
+**Answer: d) Utilizing power-saving modes and low-power components**  Embedded systems often operate on batteries or have strict power budgets, making power efficiency a primary design consideration.
+
+
+**3. What is the primary role of a Real-Time Operating System (RTOS) in an embedded system?**
+a) Providing a graphical user interface (GUI)
+b) Managing system resources and scheduling tasks to meet deadlines
+c) Running complex applications like word processors
+d) Connecting the system to the internet
+
+**Answer: b) Managing system resources and scheduling tasks to meet deadlines** RTOSes are designed to ensure that tasks are executed within specific time constraints, crucial for many embedded applications.
+
+
+**4.  Which of the following programming languages is commonly used for embedded systems development due to its efficiency and low-level access to hardware?**
+a) Python
+b) Java
+c) C
+d) JavaScript
+
+**Answer: c) C** C offers a good balance between high-level programming constructs and direct hardware control, making it well-suited for embedded systems.
+
+
+**5.  What is the term for a predictable and repeatable sequence of events in an embedded system, often triggered by an external event or timer?**
+a) Interrupt
+b) Loop
+c) Function
+d) Process
+
+**Answer: a) Interrupt** Interrupts allow the system to respond to external events in a timely manner, crucial for real-time operation.  While loops and functions are involved, the *trigger* and *response* mechanism is defined by the interrupt.
+
+[2025-08-20 12:01:49] Doubt Solver
+Query: explain about micro controllers
+Response: Imagine a tiny, super-specialized computer built into a single chip. That's a microcontroller!  It's like a brain for a small device.
+
+Instead of a keyboard, mouse, and screen like your desktop computer, a microcontroller interacts with the world through sensors and actuators.
+
+* **Sensors:** These are like the microcontroller's eyes and ears.  They detect things like temperature, light, pressure, or the position of a button.
+
+* **Actuators:** These are like the microcontroller's hands and feet. They do things like turn a motor, light an LED, or open a valve.
+
+The microcontroller's job is to read information from the sensors, process it according to a program (a set of instructions you write), and then tell the actuators what to do.
+
+**Think of examples:**
+
+* **Washing machine:** A microcontroller controls the water level, spin cycle, and heating elements.
+* **Traffic light:** A microcontroller times the lights to control traffic flow.
+* **Remote control:** A microcontroller receives signals and sends commands to a TV or other device.
+* **Smartwatch:** A microcontroller monitors your heart rate, tracks your steps, and displays information on the screen.
+
+Microcontrollers are everywhere because they are:
+
+* **Small and cheap:** They can fit into tiny spaces and are inexpensive to manufacture.
+* **Low power:** They often run on batteries for a long time.
+* **Programmable:** You can change their behavior by writing different programs.
+
+So, in short, a microcontroller is a tiny, powerful computer that's perfect for controlling small devices and making them smart!
+
+[2025-08-20 12:02:40] Resume Analyzer
+Query: I am a final-year Computer Science student at Godavari Institute of Engineering and Technology
+with a strong foundation in Python programming. I am passionate about Artificial Intelligence,
+Machine Learning, and have experience in developing chatbots and talking models. My goal is to
+apply these skills in real-world projects and contribute to impactful, AI-driven solutions.CAREER OBJECTIVE
+EDUCATION
+B.Tech Computer Science and Engineering
+Intermediate
+SSCCGPA: 7.81 (out of 10) (Till date)
+Godavari Institute of Engineering and Technology, Rajahmundry.
+Aggregate: 72 %
+Sri Chaitanya JuniorCollege, Gajuwaka.
+CGPA: 9.8 (out of 10)
+Bhashyam public School,Gajuwaka.2022 - 2026
+2020-2022
+2019-2020
+TECHNICAL SKILLS
+Programming language :
+Web Technologies           :Python
+TOOLS
+GIT(Bash and Git hub)
+INTERNSHIPRender Google AI studio PowerBI7780452441 teja24041@gmail.com linkedin
+PAVAN PRASANNA SAI TEJA
+SURAMPALLI GitHub
+Html, CSS, Render
+Databases                          :SQL
+Soft Skills                            :Communication,Teamwork
+Artificial Intelligence & Machine Learning Using Python
+AWS and Cloud Computing & DEVOPS
+CERTIFICATES 
+Artificial Intelligence and Machine Learning using python (Aimer’s society)
+AWS and Cloud computing (APSSDC)
+Cisco cybersecurity, python essentials, networking academy
+Postman API Fundamentals
+IBM Python for data science and Technical Essentials
+PROJECT WORK
+Multi Purpose chatbot-BUJJI (chatbot that is equipped with features like
+“question answering”, “image processing”, “weather detection”).
+TRON-“Technical Research Oriented Negotiator”(AI powered industrial solution
+platform with ‘Quiz generator’,’Doubtsolver’,’Code Debugger’,’ResumeAnalyzer’).
+STRENGTHS 
+ Adaptability
+ Self motivated
+ Leadership 
+       Trilingual
+LANGUAGES KNOWN
+English
+Telugu
+Hindi
+DECLARATION
+I here by declare that the above information is true to the best of my knowledge.
+Place: RAJAHMUNDRY                                                                                                                                S.P.P.SAITEJA
+Date:
+Response: The provided text is a resume for Pavan Prasanna Sai Teja.  The user's question isn't a question, but rather a verbatim copy of the resume's content.  Therefore, there's no question to answer.  To provide a useful response, I need an actual question about the resume content.
+
+For example, a user might ask:
+
+* "What programming languages is Pavan proficient in?"
+* "What are Pavan's key projects and what technologies did they utilize?"
+* "What certifications does Pavan hold related to AI/ML?"
+* "What is Pavan's GPA?"
+* "What is Pavan's contact information?"
+
+
+Once a specific question is provided, I can give a detailed and accurate answer based on the resume content.
+
+[2025-08-20 12:03:05] Resume Analyzer
+Query: tell me the corrections of the resume
+Response: The resume has several areas needing improvement for clarity, professionalism, and effectiveness:
+
+**1. Formatting and Structure:**
+
+* **Inconsistent Formatting:** The resume lacks consistent formatting.  Spacing, capitalization, and the use of bolding are inconsistent throughout.  Use a consistent font, font size, and spacing to improve readability.
+* **Career Objective:** The career objective is essentially a repetition of the introductory statement.  Instead of restating what's already clear, a concise career objective should highlight a specific career goal and how the candidate's skills align with it (e.g., "Seeking a Machine Learning Engineer role where I can leverage my expertise in Python and AI to develop innovative solutions").
+* **Education Section:** The dates are oddly formatted.  Use a standard YYYY-YYYY format (e.g., 2019-2020).  Also, clarify "Intermediate" – is this a high school diploma or a pre-university qualification?  Specify the type of degree.
+* **Technical Skills:**  This section is poorly organized.  List programming languages, web technologies, databases, and tools in separate, clearly labeled sections.  Avoid phrases like "Artificial Intelligence & Machine Learning Using Python" –  it's implied by the projects and certifications.
+* **Internship:**  "Render" is unclear. Specify the company name. The phone number and email address should be clearly separated.  LinkedIn and GitHub profiles should be hyperlinked, not just listed.
+* **Projects:** Bullet points would make the project descriptions more readable.  Quantify achievements whenever possible (e.g., "Developed a chatbot that processed X number of user queries daily").
+* **Strengths:**  Use stronger action verbs and quantify achievements where possible (e.g., instead of "Leadership," write "Led a team of X members in the development of Y project").
+
+
+**2. Content Issues:**
+
+* **Python Only in Web Technologies:** Listing Python *only* under "Web Technologies" is misleading. Python is a general-purpose programming language used far beyond web development.  It should be listed prominently under "Programming Languages."
+* **Unclear Internship:** The internship description is vague. Provide more details about the role, responsibilities, and accomplishments.
+* **Overlapping Skills and Certifications:**  The skills and certifications sections have significant overlap.  Streamline this to avoid redundancy.  For example, the AI/ML certification is redundant given the project work and stated skills.
+* **Missing Contact Information:** While an email is present, a phone number and potentially a location (city and state) should be added for better accessibility.
+* **Declaration:**  A declaration is generally unnecessary in a resume.
+
+
+**3. Overall Recommendations:**
+
+* **Use a Template:** Use a professional resume template to ensure consistent formatting and a visually appealing layout.
+* **Tailor to the Job:**  Customize the resume for each job application.  Highlight the skills and experiences most relevant to the specific role.
+* **Proofread Carefully:**  Thoroughly proofread the resume for any grammatical errors or typos.
+
+
+By addressing these issues, the resume will be significantly improved, making it more effective in showcasing Pavan's skills and experience to potential employers.
+
+[2025-08-20 13:00:09] Resume Analyzer
+Query: I am a final-year Computer Science student at Godavari Institute of Engineering and Technology
+with a strong foundation in Python programming. I am passionate about Artificial Intelligence,
+Machine Learning, and have experience in developing chatbots and talking models. My goal is to
+apply these skills in real-world projects and contribute to impactful, AI-driven solutions.CAREER OBJECTIVE
+EDUCATION
+B.Tech Computer Science and Engineering
+Intermediate
+SSCCGPA: 7.81 (out of 10) (Till date)
+Godavari Institute of Engineering and Technology, Rajahmundry.
+Aggregate: 72 %
+Sri Chaitanya JuniorCollege, Gajuwaka.
+CGPA: 9.8 (out of 10)
+Bhashyam public School,Gajuwaka.2022 - 2026
+2020-2022
+2019-2020
+TECHNICAL SKILLS
+Programming language :
+Web Technologies           :Python
+TOOLS
+GIT(Bash and Git hub)
+INTERNSHIPRender Google AI studio PowerBI7780452441 teja24041@gmail.com linkedin
+PAVAN PRASANNA SAI TEJA
+SURAMPALLI GitHub
+Html, CSS, Render
+Databases                          :SQL
+Soft Skills                            :Communication,Teamwork
+Artificial Intelligence & Machine Learning Using Python
+AWS and Cloud Computing & DEVOPS
+CERTIFICATES 
+Artificial Intelligence and Machine Learning using python (Aimer’s society)
+AWS and Cloud computing (APSSDC)
+Cisco cybersecurity, python essentials, networking academy
+Postman API Fundamentals
+IBM Python for data science and Technical Essentials
+PROJECT WORK
+Multi Purpose chatbot-BUJJI (chatbot that is equipped with features like
+“question answering”, “image processing”, “weather detection”).
+TRON-“Technical Research Oriented Negotiator”(AI powered industrial solution
+platform with ‘Quiz generator’,’Doubtsolver’,’Code Debugger’,’ResumeAnalyzer’).
+STRENGTHS 
+ Adaptability
+ Self motivated
+ Leadership 
+       Trilingual
+LANGUAGES KNOWN
+English
+Telugu
+Hindi
+DECLARATION
+I here by declare that the above information is true to the best of my knowledge.
+Place: RAJAHMUNDRY                                                                                                                                S.P.P.SAITEJA
+Date:
+Response: The provided text is a resume for Pavan Prasanna Sai Teja.  The user's question isn't a question; it's a verbatim copy of the resume's introduction and some of its content.  There's no actual question to answer.  To provide a helpful response, I need a specific question about the resume content.
+
+
+For example, the user could ask:
+
+* "What programming languages is Pavan proficient in?"
+* "What projects has Pavan worked on?"
+* "What certifications does Pavan have?"
+* "What is Pavan's GPA?"
+* "What are Pavan's strengths according to his resume?"
+
+
+Once a specific question is provided, I can give a detailed and accurate answer based on the resume's content.
+
+[2025-08-20 13:00:44] Resume Analyzer
+Query: give me pros and cons of the uploaded resume
+Response: Here's an analysis of the provided resume, outlining its pros and cons:
+
+**Pros:**
+
+* **Clear and Concise:** The resume is well-organized and easy to read.  Information is presented clearly and concisely.
+* **Relevant Skills:** The skills listed (Python, AI, ML, chatbot development, SQL, AWS, etc.) are highly relevant to many entry-level roles in the tech industry.
+* **Quantifiable Achievements:**  The CGPA scores and project descriptions provide quantifiable evidence of the candidate's abilities.  While not extensively detailed, mentioning features of the chatbot and TRON platform adds value.
+* **Project Highlights:** The projects, "BUJJI" and "TRON," demonstrate practical application of skills and showcase initiative.  The descriptions briefly highlight key features, making them stand out.
+* **Certifications:**  The listed certifications (AI/ML, AWS, Cisco) add credibility and demonstrate a commitment to learning.
+* **Strong Technical Skills:**  A solid foundation in Python, along with experience in relevant technologies like SQL and AWS, is a significant strength.
+* **Soft Skills Included:** The inclusion of soft skills like communication and teamwork shows awareness of the importance of these attributes in the workplace.
+* **Contact Information:**  Contact information is clearly presented.
+
+
+**Cons:**
+
+* **Lack of Detail in Projects:** While the projects are mentioned, they lack depth.  More detail on the challenges faced, solutions implemented, and results achieved would significantly strengthen the resume.  Quantifiable results (e.g., "Improved chatbot accuracy by 15%") would be highly beneficial.
+* **Vague Internship Description:** The internship section only mentions "Render Google AI studio PowerBI."  This needs significant expansion to include the company name, dates, and a brief description of responsibilities and accomplishments.
+* **Missing Quantifiable Results:**  The resume lacks quantifiable results in many areas.  For example, the impact of the projects isn't clearly stated.  Adding metrics would significantly improve the resume's impact.
+* **"Talking Models" is Vague:** The phrase "talking models" is unclear.  Clarifying this would improve understanding.
+* **Limited Work Experience:**  The resume focuses heavily on academic achievements and projects.  Adding any relevant work experience, even part-time or volunteer roles, would be advantageous.
+* **Resume Length:** While concise, the resume could benefit from a bit more detail in some sections to fully showcase the candidate's skills and experiences.
+* **Formatting Inconsistencies:** Minor formatting inconsistencies (e.g., spacing) could be improved for better visual appeal.
+
+
+**Overall:**
+
+The resume is a good starting point, but significant improvements can be made by adding more detail to the projects and internship, quantifying achievements, and including any relevant work experience.  Addressing these cons would make the resume much more compelling to potential employers.
+
+[2025-10-24 13:43:00] Quiz Generator
+Query: quiz on biology
+Response: AI processing error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+
+[2025-10-24 13:45:55] Quiz Generator
+Query: quiz on indian army
+Response: AI processing error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+
+[2026-05-29 12:10:08] Quiz Generator
+Query: Hey Ram just give me a quiz on JSS sorry JavaScript
+Response: AI processing error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+[2026-05-29 12:12:46] Quiz Generator
+Query: quiz on js
+Response: API quota exceeded. Please try again later.
+
+[2026-05-29 12:15:32] Quiz Generator
+Query: quiz on css
+Response: API quota exceeded. Please try again later.
+
+[2026-05-29 12:17:07] Doubt Solver
+Query: explain about gradients in css
+Response: API quota exceeded. Please try again later.
+
+[2026-05-29 12:21:05] Doubt Solver
+Query: gradients in css
+Response: API quota exceeded. Please try again later.
+
+[2026-05-29 12:24:34] Quiz Generator
+Query: quiz on gradient in css
+Response: AI processing error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+
+[2026-05-29 12:25:15] Quiz Generator
+Query: quiz on css
+Response: API quota exceeded. Please try again later.
+
+[2026-05-29 12:30:22] Quiz Generator
+Query: quiz on css
+Response: API quota exceeded. Please try again later.
+
+[2026-05-29 12:48:27] Quiz Generator
+Query: quiz on css
+Response: Here are five multiple-choice questions on the topic of CSS:
+
+**Question 1:** What does CSS stand for?
+A) Cascading Style Sheets
+B) Creative Style Sheets
+C) Custom Style Sheets
+D) Coding Style Sheets
+
+**Answer:** A) Cascading Style Sheets
+
+**Question 2:** Which CSS property is used to set the background color of an element?
+A) color
+B) background-color
+C) font-size
+D) text-align
+
+**Answer:** B) background-color
+
+**Question 3:** What is the purpose of the `!important` keyword in CSS?
+A) To make a style rule more specific
+B) To override other style rules
+C) To add a comment to the code
+D) To declare a variable
+
+**Answer:** B) To override other style rules
+
+**Question 4:** Which CSS selector is used to target all elements with a specific class?
+A) `#`
+B) `.`
+C) `*`
+D) `>`
+
+**Answer:** B) `.` (e.g. `.myclass`)
+
+**Question 5:** What is the difference between `inline-block` and `block` display properties in CSS?
+A) `inline-block` takes up the full width of the parent, while `block` does not
+B) `inline-block` does not take up the full width of the parent, while `block` does
+C) `inline-block` is used for text, while `block` is used for images
+D) `inline-block` is used for tables, while `block` is used for lists
+
+**Answer:** B) `inline-block` does not take up the full width of the parent, while `block` does
+
+[2026-05-29 12:50:46] Resume Analyzer
+Query: on css
+Response: 
+        ❌ No resume loaded yet!
+        
+        To analyze your resume:
+        1. Upload your resume file using the file upload button above, OR
+        2. Paste your resume content in the text area and submit
+        3. Type 'template' for a sample resume format
+        
+        Supported file formats: PDF, DOCX, TXT
+        
+
+[2026-05-29 12:51:02] Code Debugger
+Query: on css
+Response: It seems like you didn't provide any CSS code for me to analyze. Please provide the code you'd like me to review, and I'll be happy to:
+
+1. Explain what the code does
+2. Identify any issues or potential problems
+3. Provide suggestions for improvement or fixes
+
+Please paste the CSS code, and I'll get started!
+
+[2026-05-29 13:33:05] Quiz Generator
+Query: quiz on css
+Response: Here are five multiple-choice questions on the topic of CSS:
+
+**Question 1:** What does CSS stand for?
+A) Cascading Style Sheets
+B) Creative Style Sheets
+C) Custom Style Sheets
+D) Coding Style Sheets
+
+**Answer:** A) Cascading Style Sheets
+
+**Question 2:** Which of the following CSS properties is used to set the background color of an element?
+A) color
+B) background-color
+C) font-size
+D) text-align
+
+**Answer:** B) background-color
+
+**Question 3:** What is the purpose of the CSS selector `#id`?
+A) To select all elements with a specific class
+B) To select a specific element with a unique ID
+C) To select all elements with a specific tag name
+D) To select all elements on the page
+
+**Answer:** B) To select a specific element with a unique ID
+
+**Question 4:** Which of the following CSS units is used to set the font size relative to the parent element's font size?
+A) px
+B) %
+C) em
+D) cm
+
+**Answer:** C) em
+
+**Question 5:** What is the purpose of the CSS property `display: none`?
+A) To hide an element from view, but still occupy space in the layout
+B) To hide an element from view and remove it from the layout
+C) To make an element visible, but only on hover
+D) To make an element visible, but only on click
+
+**Answer:** B) To hide an element from view and remove it from the layout
+
+[2026-05-29 13:47:11] Resume Analyzer
+Query: Analyzing uploaded file: Saiteja resume.pdf, is my project experience sutiable to mentioned skills
+Response: 
+        ❌ No resume loaded yet!
+        
+        To analyze your resume:
+        1. Upload your resume file using the file upload button above, OR
+        2. Paste your resume content in the text area and submit
+        3. Type 'template' for a sample resume format
+        
+        Supported file formats: PDF, DOCX, TXT
+        
+
+[2026-05-29 13:48:21] Resume Analyzer
+Query: Analyzing uploaded file: Saiteja resume.pdf is my skillset matching with my projects
+Response: 
+        ❌ No resume loaded yet!
+        
+        To analyze your resume:
+        1. Upload your resume file using the file upload button above, OR
+        2. Paste your resume content in the text area and submit
+        3. Type 'template' for a sample resume format
+        
+        Supported file formats: PDF, DOCX, TXT
+        
+
+[2026-05-29 13:49:00] Doubt Solver
+Query: explain css gradients
+Response: **What are CSS Gradients?**
+
+CSS Gradients are a way to create a gradual transition between two or more colors in a web page. Imagine you have a button or a background, and you want it to change from one color to another smoothly. That's where CSS Gradients come in.
+
+**Types of CSS Gradients:**
+
+There are several types of CSS Gradients:
+
+1. **Linear Gradient**: This type of gradient changes color from one side to another in a straight line.
+2. **Radial Gradient**: This type of gradient changes color from the center of an element to the edges, like a circle.
+3. **Conic Gradient**: This type of gradient changes color in a circular motion, like a cone.
+
+**How to Create a CSS Gradient:**
+
+To create a CSS Gradient, you need to use the `background` property in your CSS code and specify the type of gradient you want to use. For example:
+```css
+.linear-gradient {
+  background: linear-gradient(to right, #ff0000, #00ff00);
+}
+```
+In this example, the `linear-gradient` class will create a linear gradient that changes from red (`#ff0000`) to green (`#00ff00`) from left to right.
+
+**Gradient Properties:**
+
+Here are some common properties you can use to customize your CSS Gradient:
+
+* `to right`, `to left`, `to top`, `to bottom`: specify the direction of the gradient
+* `#color1`, `#color2`, etc.: specify the colors you want to use in the gradient
+* `deg`: specify the angle of the gradient (e.g., `45deg`)
+
+**Example:**
+
+Let's say you want to create a button with a linear gradient that changes from blue to yellow. You can use the following CSS code:
+```css
+.button {
+  background: linear-gradient(to right, #0000ff, #ffff00);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+```
+This will create a button with a linear gradient that changes from blue to yellow from left to right.
+
+I hope this helps! Let me know if you have any questions or need further clarification.
+
+[2026-05-29 13:49:23] Doubt Solver
+Query: tell me about present trends in artificial intelligence jobs
+Response: **What's Hot in AI Jobs Right Now?**
+
+Artificial Intelligence (AI) is a rapidly growing field, and it's changing the way we work and live. Here are some of the present trends in AI jobs that you should know about:
+
+**Top AI Job Trends:**
+
+1. **Machine Learning Engineer**: These engineers design and develop algorithms that help machines learn and improve their performance. They're in high demand, and their salaries are quite competitive.
+2. **Data Scientist**: Data scientists collect and analyze data to help organizations make better decisions. They use AI and machine learning techniques to gain insights from data.
+3. **Natural Language Processing (NLP) Specialist**: NLP specialists work on developing AI systems that can understand and generate human language. They're in demand in industries like customer service, chatbots, and language translation.
+4. **Computer Vision Engineer**: These engineers work on developing AI systems that can interpret and understand visual data from images and videos. They're in demand in industries like self-driving cars, healthcare, and surveillance.
+5. **AI Researcher**: AI researchers work on developing new AI algorithms and techniques that can be applied to various industries. They're in demand in academia, research institutions, and tech companies.
+
+**Emerging Trends:**
+
+1. **Explainable AI (XAI)**: XAI is a field that focuses on developing AI systems that can explain their decisions and actions. This is important for industries like healthcare, finance, and law, where transparency and accountability are crucial.
+2. **Edge AI**: Edge AI refers to the development of AI systems that can run on devices like smartphones, smart home devices, and autonomous vehicles. This trend is driven by the need for real-time processing and low latency.
+3. **Autonomous Systems**: Autonomous systems like self-driving cars, drones, and robots are becoming increasingly popular. They require sophisticated AI systems that can perceive, reason, and act in real-time.
+
+**Skills in Demand:**
+
+1. **Programming languages**: Python, Java, C++, and R are popular programming languages used in AI development.
+2. **Machine learning frameworks**: TensorFlow, PyTorch, and Scikit-learn are popular frameworks used for machine learning development.
+3. **Data science tools**: NumPy, Pandas, and Matplotlib are popular tools used for data analysis and visualization.
+4. **Cloud computing**: Cloud computing platforms like AWS, Azure, and Google Cloud are widely used in AI development.
+
+**Tips for Students:**
+
+1. **Learn programming languages**: Focus on learning popular programming languages like Python, Java, and C++.
+2. **Develop practical skills**: Work on projects that involve machine learning, data analysis, and AI development.
+3. **Stay updated**: Follow industry trends, research papers, and blogs to stay updated on the latest developments in AI.
+4. **Network**: Attend conferences, meetups, and join online communities to network with professionals in the AI industry.
+
+I hope this helps you understand the present trends in AI jobs! Remember to stay curious, keep learning, and adapt to the changing landscape of the AI industry.
+
+[2026-05-29 14:00:45] Doubt Solver
+Query: js loops
+Response: **JavaScript Loops: A Simple Explanation**
+
+JavaScript loops are used to repeat a set of instructions over and over again. Imagine you have a list of tasks you need to do, and you want to do them one by one. Loops help you automate this process.
+
+**Types of Loops:**
+
+1. **For Loop**: A for loop is used when you know how many times you want to repeat a task. For example, if you want to print numbers from 1 to 5, you can use a for loop.
+2. **While Loop**: A while loop is used when you don't know how many times you want to repeat a task. It will keep repeating until a certain condition is met. For example, if you want to keep asking the user for input until they type "quit".
+3. **Do-While Loop**: A do-while loop is similar to a while loop, but it will always execute the code at least once before checking the condition.
+
+**How Loops Work:**
+
+1. **Initialization**: You set a starting point for your loop, like a counter variable.
+2. **Condition**: You set a condition that must be true for the loop to continue.
+3. **Execution**: The code inside the loop is executed.
+4. **Increment**: The counter variable is updated, so the loop can check the condition again.
+
+**Example:**
+
+```javascript
+// For Loop
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+// While Loop
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+
+// Do-While Loop
+let j = 0;
+do {
+  console.log(j);
+  j++;
+} while (j < 5);
+```
+
+In all these examples, the output will be the numbers 0, 1, 2, 3, and 4.
+
+**Tips:**
+
+* Use loops to avoid repetitive code.
+* Make sure to update the counter variable, or the loop will run infinitely.
+* Use the correct type of loop for your task.
+
+I hope this explanation helps you understand JavaScript loops!
+
+[2026-05-29 14:01:44] Code Debugger
+Query: function loadHistoryItem(mode, query) {
+            document.getElementById('queryInput').value = query;
+
+            // Activate the corresponding mode button
+            const modeBtn = document.getElementById(mode + Btn');
+            if (modeBtn) 
+                modeBtn.click();
+            }
+Response: **Code Analysis:**
+
+The given code is a JavaScript function named `loadHistoryItem` that takes two parameters: `mode` and `query`. The function appears to be part of a larger application that has a user interface with input fields and buttons.
+
+**What the Code Does:**
+
+1. It sets the value of an HTML input element with the id `queryInput` to the `query` parameter.
+2. It attempts to activate a button element with an id that is constructed by concatenating the `mode` parameter with the string `'Btn'`.
+3. If a button with the constructed id exists, it simulates a click on that button.
+
+**Issues with the Code:**
+
+1. **Syntax Error:** There is a syntax error in the line where it tries to get the `modeBtn` element. The correct syntax should be `document.getElementById(mode + 'Btn')`.
+2. **Potential Null Pointer Exception:** The code does not handle the case where the `modeBtn` element is not found. Although it checks if `modeBtn` is truthy, it does not provide any feedback or error handling if the element is not found.
+3. **Button Activation:** The code assumes that clicking the button will activate the corresponding mode. However, this might not be the case if the button's click event is not properly handled or if the button's activation is not solely dependent on the click event.
+
+**Fixed Code:**
+
+```javascript
+function loadHistoryItem(mode, query) {
+    // Set the query input value
+    document.getElementById('queryInput').value = query;
+
+    // Activate the corresponding mode button
+    const modeBtnId = mode + 'Btn';
+    const modeBtn = document.getElementById(modeBtnId);
+    if (modeBtn) {
+        // Check if the button has a click event listener
+        if (modeBtn.click) {
+            modeBtn.click();
+        } else {
+            console.error(`Button with id ${modeBtnId} does not have a click event listener.`);
+        }
+    } else {
+        console.error(`Button with id ${modeBtnId} not found.`);
+    }
+}
+```
+
+**Improved Code:**
+
+To make the code more robust, consider the following improvements:
+
+1. **Use a more robust way to get the button element:** Instead of relying on the `id` attribute, consider using a more specific selector, such as a class or a data attribute.
+2. **Handle button activation more explicitly:** Instead of relying on the button's click event, consider calling a function that explicitly activates the corresponding mode.
+3. **Provide feedback for errors:** Consider displaying an error message or notification to the user if the button is not found or if its activation fails.
+
+```javascript
+function loadHistoryItem(mode, query) {
+    // Set the query input value
+    document.getElementById('queryInput').value = query;
+
+    // Activate the corresponding mode
+    const modeBtn = document.querySelector(`[data-mode="${mode}"]`);
+    if (modeBtn) {
+        activateMode(mode);
+    } else {
+        console.error(`Button for mode ${mode} not found.`);
+        displayError(`Button for mode ${mode} not found.`);
+    }
+}
+
+function activateMode(mode) {
+    // Code to activate the corresponding mode
+    console.log(`Activating mode ${mode}`);
+}
+
+function displayError(message) {
+    // Code to display an error message to the user
+    console.error(message);
+}
+```
+
+[2026-05-29 14:14:18] Resume Analyzer
+Query: Analyzing uploaded file: Saiteja resume.pdf, analyse my skills and suggest me a fresher job
+Response: 
+        ❌ No resume loaded yet!
+        
+        To analyze your resume:
+        1. Upload your resume file using the file upload button above, OR
+        2. Paste your resume content in the text area and submit
+        3. Type 'template' for a sample resume format
+        
+        Supported file formats: PDF, DOCX, TXT
+        
+
+[2026-06-02 17:02:02] Quiz Generator
+Query: quiz on css
+Response: Here are five multiple-choice questions on the topic of CSS:
+
+**Question 1:** What does CSS stand for?
+A) Cascading Style Sheets
+B) Creative Style Sheets
+C) Custom Style Sheets
+D) Coding Style Sheets
+
+**Answer:** A) Cascading Style Sheets
+
+**Question 2:** Which CSS property is used to set the background color of an element?
+A) color
+B) background-color
+C) font-size
+D) text-align
+
+**Answer:** B) background-color
+
+**Question 3:** What is the purpose of the `!important` keyword in CSS?
+A) To make a style rule more specific
+B) To override other style rules
+C) To add a comment to the code
+D) To remove a style rule
+
+**Answer:** B) To override other style rules
+
+**Question 4:** Which CSS selector is used to target all elements of a specific class?
+A) `#`
+B) `.`
+C) `*`
+D) `^`
+
+**Answer:** B) `.` (e.g., `.classname`)
+
+**Question 5:** What is the difference between `inline` and `block` elements in CSS?
+A) `inline` elements take up the full width of the page, while `block` elements do not
+B) `inline` elements do not take up the full width of the page, while `block` elements do
+C) `inline` elements are only used for text, while `block` elements are only used for images
+D) `inline` elements are only used for tables, while `block` elements are only used for lists
+
+**Answer:** B) `inline` elements do not take up the full width of the page, while `block` elements do
+
+[2026-06-15 08:03:31] Resume Analyzer
+Query: check the faults of resume
+Response: After reviewing the provided resume content, I have identified some potential faults and areas for improvement:
+
+1. **Formatting and Structure**: The resume appears to be a plain text document with inconsistent formatting, making it difficult to read and scan. Consider using a standard font, bullet points, and clear headings to improve the overall structure.
+2. **Contact Information**: The email address and phone number are not clearly separated from the rest of the content. It's better to have a dedicated "Contact Information" section with a clear format.
+3. **Objective Statement**: There is no clear objective statement or career summary at the beginning of the resume. This section should provide a brief overview of the candidate's experience, skills, and career goals.
+4. **Education**: The education section is brief, but it's missing the university's location (Rajahmundry) and the expected graduation date (Mar 2026) is mentioned, but not the actual graduation date (since it's a final-year student).
+5. **Skills**: The skills section is not exhaustive, and some skills are not clearly categorized (e.g., AI/ML & Tools). Consider breaking down the skills into separate categories (e.g., Programming Languages, Web Technologies, AI/ML, etc.).
+6. **Internship Experience**: The internship experience section is brief, but it's missing specific details such as:
+	* Company descriptions
+	* Dates (only year is mentioned)
+	* Achievements and accomplishments
+	* Responsibilities and tasks performed
+7. **Projects**: The projects section is interesting, but it's missing:
+	* A brief description of each project
+	* Technologies used (beyond just Python and Groq API)
+	* Achievements and outcomes
+8. **Certifications**: The certifications section is a good start, but it's missing:
+	* Dates of completion
+	* Certification numbers (if applicable)
+	* Brief descriptions of each certification
+9. **Declaration**: The declaration statement seems out of place and is not typically included in a resume.
+10. **Action Verbs and Keywords**: The resume could benefit from more action verbs (e.g., "Developed," "Designed," "Implemented") and relevant keywords (e.g., "Cloud Computing," "Machine Learning," "Natural Language Processing") to help with applicant tracking systems (ATS) and search engine optimization (SEO).
+11. **Quantifiable Achievements**: The resume lacks quantifiable achievements and metrics to demonstrate the candidate's impact and accomplishments.
+12. **Consistency**: There are some inconsistencies in formatting, punctuation, and capitalization throughout the resume. Ensure that the formatting is consistent throughout the document.
+
+By addressing these faults and areas for improvement, the candidate can create a more effective and engaging resume that showcases their skills, experience, and achievements.
+
+[2026-06-15 08:04:37] Resume Analyzer
+Query: Pavan Prasanna SaiTeja Surampalli
+/githubGitHub| /linkedinLinkedIn| /gl⌢beCredly| /envel⌢peteja24041@gmail.com| ♂¶obile+91 77804 52441
+About Me
+Final-year B.Tech CSE student with experience in Python, AI/ML, chatbot development, cloud comput-
+ing, and industry certifications from AWS, IBM, and Cisco.
+Education
+B.Tech – Computer Science & EngineeringCGPA: 7.81/10 Nov 2022 – Mar 2026
+Godavari Institute of Engineering and Technology, Rajahmundry
+Intermediate (MPC)72% Mar 2020 – Mar 2022
+Sri Chaitanya Junior College, Gajuwaka
+SSC – 10th GradeCGPA: 9.8/10 Mar 2019 – Mar 2020
+Bhashyam Public School, Gajuwaka
+Skills
+Programming LanguagesPython.
+Web TechnologiesHTML, CSS, JavaScript
+DatabaseSQL
+AI / ML & ToolsMachine Learning, NLP, Chatbot Development, Groq API, Power BI, Git.
+Internship Experience
+AI & ML Intern|Aimer’s Society2024
+– Built and evaluated ML models using Python, Pandas, and Scikit-learn, applying preprocessing, feature
+engineering, and classification techniques.
+Cloud Computing & DevOps Intern|APSSDC2024
+– Worked with AWS services, Git, and Render for cloud deployment and DevOps workflows.
+Projects
+BUJJI – Multi-Purpose AI ChatbotPython·Groq API·REST API
+Built an AI chatbot for Q&A, image processing, and weather updates
+using Groq API.
+TRON – AI-Powered Learning & Developer ToolkitPython·Groq API·Power BI
+Developed a 4-module AI platform featuring Quiz Generator, Doubt
+Solver, Code Debugger, and Resume Analyzer using Groq API.
+Certifications
+•AWS AI Practitioner – Foundational(AWS)•Python for Data Science & Essentials(IBM)
+•AI & ML Using Python(Aimer’s Society)•Cybersecurity & Python Essentials(Cisco)
+•AWS & Cloud Computing(APSSDC)•API Fundamentals Student Expert(Postman)
+Declaration
+I hereby declare that the above information is true and correct to the best of my knowledge.
+Place:HyderabadDate: S.P.P.Sai Teja
+Response: It seems like you provided the entire resume content again instead of asking a specific question. However, I'll provide a detailed analysis of the resume content:
+
+**Summary:**
+The resume belongs to Pavan Prasanna SaiTeja Surampalli, a final-year B.Tech CSE student with experience in Python, AI/ML, chatbot development, cloud computing, and industry certifications from AWS, IBM, and Cisco.
+
+**Education:**
+
+* B.Tech in Computer Science & Engineering from Godavari Institute of Engineering and Technology, Rajahmundry (Nov 2022 - Mar 2026) with a CGPA of 7.81/10.
+* Intermediate (MPC) from Sri Chaitanya Junior College, Gajuwaka (Mar 2020 - Mar 2022) with a score of 72%.
+* SSC - 10th Grade from Bhashyam Public School, Gajuwaka (Mar 2019 - Mar 2020) with a CGPA of 9.8/10.
+
+**Skills:**
+
+* Programming Languages: Python.
+* Web Technologies: HTML, CSS, JavaScript.
+* Database: SQL.
+* AI/ML & Tools: Machine Learning, NLP, Chatbot Development, Groq API, Power BI, Git.
+
+**Internship Experience:**
+
+* AI & ML Intern at Aimer's Society (2024): Built and evaluated ML models using Python, Pandas, and Scikit-learn.
+* Cloud Computing & DevOps Intern at APSSDC (2024): Worked with AWS services, Git, and Render for cloud deployment and DevOps workflows.
+
+**Projects:**
+
+* BUJJI - Multi-Purpose AI Chatbot: Built an AI chatbot for Q&A, image processing, and weather updates using Groq API.
+* TRON - AI-Powered Learning & Developer Toolkit: Developed a 4-module AI platform featuring Quiz Generator, Doubt Solver, Code Debugger, and Resume Analyzer using Groq API.
+
+**Certifications:**
+
+* AWS AI Practitioner - Foundational (AWS)
+* Python for Data Science & Essentials (IBM)
+* AI & ML Using Python (Aimer's Society)
+* Cybersecurity & Python Essentials (Cisco)
+* AWS & Cloud Computing (APSSDC)
+* API Fundamentals Student Expert (Postman)
+
+**Declaration:**
+The candidate declares that the information provided is true and correct to the best of their knowledge.
+
+If you have a specific question regarding the resume content, please feel free to ask, and I'll be happy to help.
+
+[2026-06-15 08:18:07] Resume Analyzer
+Query: Pavan Prasanna SaiTeja Surampalli
+/githubGitHub| /linkedinLinkedIn| /gl⌢beCredly| /envel⌢peteja24041@gmail.com| ♂¶obile+91 77804 52441
+About Me
+Final-year B.Tech CSE student with experience in Python, AI/ML, chatbot development, cloud comput-
+ing, and industry certifications from AWS, IBM, and Cisco.
+Education
+B.Tech – Computer Science & EngineeringCGPA: 7.81/10 Nov 2022 – Mar 2026
+Godavari Institute of Engineering and Technology, Rajahmundry
+Intermediate (MPC)72% Mar 2020 – Mar 2022
+Sri Chaitanya Junior College, Gajuwaka
+SSC – 10th GradeCGPA: 9.8/10 Mar 2019 – Mar 2020
+Bhashyam Public School, Gajuwaka
+Skills
+Programming LanguagesPython.
+Web TechnologiesHTML, CSS, JavaScript
+DatabaseSQL
+AI / ML & ToolsMachine Learning, NLP, Chatbot Development, Groq API, Power BI, Git.
+Internship Experience
+AI & ML Intern|Aimer’s Society2024
+– Built and evaluated ML models using Python, Pandas, and Scikit-learn, applying preprocessing, feature
+engineering, and classification techniques.
+Cloud Computing & DevOps Intern|APSSDC2024
+– Worked with AWS services, Git, and Render for cloud deployment and DevOps workflows.
+Projects
+BUJJI – Multi-Purpose AI ChatbotPython·Groq API·REST API
+Built an AI chatbot for Q&A, image processing, and weather updates
+using Groq API.
+TRON – AI-Powered Learning & Developer ToolkitPython·Groq API·Power BI
+Developed a 4-module AI platform featuring Quiz Generator, Doubt
+Solver, Code Debugger, and Resume Analyzer using Groq API.
+Certifications
+•AWS AI Practitioner – Foundational(AWS)•Python for Data Science & Essentials(IBM)
+•AI & ML Using Python(Aimer’s Society)•Cybersecurity & Python Essentials(Cisco)
+•AWS & Cloud Computing(APSSDC)•API Fundamentals Student Expert(Postman)
+Declaration
+I hereby declare that the above information is true and correct to the best of my knowledge.
+Place:HyderabadDate: S.P.P.Sai Teja
+Response: ## Overall Impression
+The candidate, Pavan Prasanna SaiTeja Surampalli, presents a strong profile with a solid foundation in computer science and engineering, complemented by hands-on experience in AI, ML, and cloud computing. The inclusion of relevant projects, internships, and industry certifications demonstrates a proactive approach to skill development and career preparation. However, the resume's formatting and structure could be improved for better readability and ATS compatibility.
+
+## Strengths
+- **Relevant Technical Skills**: The candidate lists a range of relevant technical skills, including programming languages (Python), web technologies (HTML, CSS, JavaScript), database management (SQL), and AI/ML tools (Machine Learning, NLP, Chatbot Development, Groq API, Power BI, Git).
+- **Practical Experience**: Participation in internships (AI & ML Intern, Cloud Computing & DevOps Intern) and development of personal projects (BUJJI, TRON) showcases practical application of skills.
+- **Certifications and Education**: A strong educational background (B.Tech in Computer Science & Engineering) coupled with industry-recognized certifications (AWS, IBM, Cisco) enhances the candidate's credibility.
+- **Project-Based Achievements**: The description of projects, such as BUJJI and TRON, highlights innovation, problem-solving skills, and the ability to work on complex AI-powered tools.
+
+## Areas for Improvement
+- **Formatting and Structure**: The current format makes the resume somewhat difficult to scan, with inconsistent spacing and no clear sections for summary/objective, work experience, or achievements. Standardizing the formatting will improve readability.
+- **Missing Sections**: A professional summary or objective statement at the beginning could provide a concise overview of the candidate's background and career goals. Additionally, a separate section for achievements or accomplishments could further highlight the candidate's impact in previous roles or projects.
+- **Weak Phrasing**: Some descriptions are brief and lack specific details about the impact or outcomes of the candidate's work. For example, quantifying the results of the ML models built or the benefits of the chatbot could strengthen the resume.
+- **Contact Information**: While the inclusion of GitHub, LinkedIn, and other professional platforms is commendable, ensuring that the email address and phone number are easily visible and correctly formatted is essential.
+
+## ATS Compatibility
+- **Keyword Usage**: The candidate has included relevant keywords from the AI, ML, and cloud computing domains, which is beneficial for ATS systems that filter resumes based on keyword matches.
+- **Formatting Issues**: The current use of symbols (/github, /linkedin, /gl⌢be) might be misinterpreted by some ATS systems. Using standard text and ensuring that all sections are clearly defined will help in better parsing by ATS.
+- **Standardization**: Ensuring that all job titles, company names, and sections are consistently formatted will aid in compatibility with various ATS systems.
+
+## Skills Gap
+- **Data Engineering**: While the candidate has experience with AI/ML, having skills in data engineering (e.g., Spark, Hadoop) could be beneficial for more senior roles or roles that require handling large datasets.
+- **Cloud Architecture**: Although there's experience with AWS and cloud computing, deeper knowledge of cloud architecture, migration, or security could be an area for development.
+- **Leadership or Team Management**: As the candidate progresses in their career, demonstrating leadership skills or experience in managing teams or projects could be crucial for more senior positions.
+
+## Actionable Suggestions
+1. **Reformat the Resume**: Use a standard, clean format with clear sections and bullet points to improve readability.
+2. **Add a Professional Summary**: Begin the resume with a brief summary that highlights the candidate's most significant strengths, experience, and career goals.
+3. **Quantify Achievements**: Where possible, include specific numbers or metrics to demonstrate the impact of projects or internships (e.g., "Improved model accuracy by 25% through feature engineering").
+4. **Expand on Experience**: Provide more details about the responsibilities and achievements in the internship experiences to give a fuller picture of the candidate's capabilities.
+5. **Standardize Contact Information**: Ensure the email address, phone number, and professional platform links are correctly formatted and easily accessible.
+6. **Consider Additional Certifications or Courses**: To address the skills gap, pursuing certifications or courses in data engineering, cloud architecture, or leadership could enhance the candidate's profile for future career advancement.
+

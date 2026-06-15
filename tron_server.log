@@ -716,3 +716,1436 @@ hei..., Input Mode: text
 2025-08-05 21:11:26,059 - INFO - 127.0.0.1 - - [05/Aug/2025 21:11:26] "POST /api/process HTTP/1.1" 200 -
 2025-08-05 21:12:11,200 - INFO - History loaded: 20 entries.
 2025-08-05 21:12:11,208 - INFO - 127.0.0.1 - - [05/Aug/2025 21:12:11] "GET /api/history HTTP/1.1" 200 -
+2025-08-20 12:00:16,563 - INFO - Google Generative AI configured successfully with free tier.
+2025-08-20 12:00:16,565 - INFO - Audio features disabled for web deployment.
+2025-08-20 12:00:16,565 - INFO - Gemini GenerativeModel and chat initialized with free tier settings.
+2025-08-20 12:00:16,565 - INFO - TRON Assistant initialized successfully.
+2025-08-20 12:00:16,571 - INFO - Starting TRON Assistant Flask server...
+2025-08-20 12:00:16,571 - INFO - Server will be accessible on port: 10000
+2025-08-20 12:00:16,579 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://10.156.141.128:10000
+2025-08-20 12:00:16,579 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-20 12:00:19,618 - INFO - Serving index.html
+2025-08-20 12:00:19,836 - INFO - 127.0.0.1 - - [20/Aug/2025 12:00:19] "GET / HTTP/1.1" 200 -
+2025-08-20 12:00:21,160 - INFO - 127.0.0.1 - - [20/Aug/2025 12:00:21] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-20 12:00:22,146 - INFO - 127.0.0.1 - - [20/Aug/2025 12:00:22] "GET /api/status HTTP/1.1" 200 -
+2025-08-20 12:00:52,750 - INFO - Processing request - Mode: quiz, Query: quiz on embedded systems..., Input Mode: text
+2025-08-20 12:00:56,636 - INFO - History saved successfully.
+2025-08-20 12:00:56,638 - INFO - Successfully processed Quiz Generator request. Final response length: 2328.
+2025-08-20 12:00:56,638 - INFO - 127.0.0.1 - - [20/Aug/2025 12:00:56] "POST /api/process HTTP/1.1" 200 -
+2025-08-20 12:01:46,832 - INFO - Processing request - Mode: doubt, Query: explain about micro controllers..., Input Mode: text
+2025-08-20 12:01:49,592 - INFO - History saved successfully.
+2025-08-20 12:01:49,592 - INFO - Successfully processed Doubt Solver request. Final response length: 1585.
+2025-08-20 12:01:49,593 - INFO - 127.0.0.1 - - [20/Aug/2025 12:01:49] "POST /api/process HTTP/1.1" 200 -
+2025-08-20 12:02:16,984 - INFO - History loaded: 20 entries.
+2025-08-20 12:02:16,984 - INFO - 127.0.0.1 - - [20/Aug/2025 12:02:16] "GET /api/history HTTP/1.1" 200 -
+2025-08-20 12:02:36,641 - INFO - File uploaded successfully: teja resume1.pdf
+2025-08-20 12:02:36,970 - INFO - Text extracted from resume file: teja resume1.pdf
+2025-08-20 12:02:36,970 - INFO - 127.0.0.1 - - [20/Aug/2025 12:02:36] "POST /api/upload HTTP/1.1" 200 -
+2025-08-20 12:02:38,489 - INFO - Processing request - Mode: resume, Query: ..., Input Mode: text
+2025-08-20 12:02:40,647 - INFO - History saved successfully.
+2025-08-20 12:02:40,647 - INFO - Successfully processed Resume Analyzer request. Final response length: 672.
+2025-08-20 12:02:40,647 - INFO - 127.0.0.1 - - [20/Aug/2025 12:02:40] "POST /api/process HTTP/1.1" 200 -
+2025-08-20 12:02:59,960 - INFO - Processing request - Mode: resume, Query: tell me the corrections of the resume..., Input Mode: text
+2025-08-20 12:03:05,208 - INFO - History saved successfully.
+2025-08-20 12:03:05,208 - INFO - Successfully processed Resume Analyzer request. Final response length: 3315.
+2025-08-20 12:03:05,208 - INFO - 127.0.0.1 - - [20/Aug/2025 12:03:05] "POST /api/process HTTP/1.1" 200 -
+2025-08-20 12:04:00,722 - INFO - History file 'tron_history.csv' created with header.
+2025-08-20 12:04:00,722 - INFO - History file cleared and re-initialized.
+2025-08-20 12:04:00,726 - INFO - 127.0.0.1 - - [20/Aug/2025 12:04:00] "POST /api/history/clear HTTP/1.1" 200 -
+2025-08-20 12:04:03,094 - INFO - History loaded: 0 entries.
+2025-08-20 12:04:03,094 - INFO - 127.0.0.1 - - [20/Aug/2025 12:04:03] "GET /api/history HTTP/1.1" 200 -
+2025-08-20 12:54:53,117 - INFO - Google Generative AI configured successfully with free tier.
+2025-08-20 12:54:53,117 - INFO - Audio features disabled for web deployment.
+2025-08-20 12:54:53,118 - INFO - Gemini GenerativeModel and chat initialized with free tier settings.
+2025-08-20 12:54:53,118 - INFO - TRON Assistant initialized successfully.
+2025-08-20 12:54:53,125 - INFO - Starting TRON Assistant Flask server...
+2025-08-20 12:54:53,125 - INFO - Server will be accessible on port: 10000
+2025-08-20 12:54:53,132 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://10.156.141.128:10000
+2025-08-20 12:54:53,132 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-20 12:55:04,076 - INFO - Serving index.html
+2025-08-20 12:55:04,283 - INFO - 127.0.0.1 - - [20/Aug/2025 12:55:04] "[36mGET / HTTP/1.1[0m" 304 -
+2025-08-20 12:55:04,995 - INFO - 127.0.0.1 - - [20/Aug/2025 12:55:04] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-20 12:55:05,906 - INFO - 127.0.0.1 - - [20/Aug/2025 12:55:05] "GET /api/status HTTP/1.1" 200 -
+2025-08-20 13:00:04,309 - INFO - File uploaded successfully: teja resume1.pdf
+2025-08-20 13:00:04,565 - INFO - Text extracted from resume file: teja resume1.pdf
+2025-08-20 13:00:04,565 - INFO - 127.0.0.1 - - [20/Aug/2025 13:00:04] "POST /api/upload HTTP/1.1" 200 -
+2025-08-20 13:00:06,094 - INFO - Processing request - Mode: resume, Query: ..., Input Mode: text
+2025-08-20 13:00:09,958 - INFO - History saved successfully.
+2025-08-20 13:00:09,958 - INFO - Successfully processed Resume Analyzer request. Final response length: 661.
+2025-08-20 13:00:09,958 - INFO - 127.0.0.1 - - [20/Aug/2025 13:00:09] "POST /api/process HTTP/1.1" 200 -
+2025-08-20 13:00:39,569 - INFO - Processing request - Mode: resume, Query: give me pros and cons of the uploaded resume..., Input Mode: speech
+2025-08-20 13:00:44,557 - INFO - History saved successfully.
+2025-08-20 13:00:44,559 - INFO - Successfully processed Resume Analyzer request. Final response length: 2998.
+2025-08-20 13:00:44,559 - INFO - 127.0.0.1 - - [20/Aug/2025 13:00:44] "POST /api/process HTTP/1.1" 200 -
+2025-08-20 13:02:11,229 - INFO - History loaded: 2 entries.
+2025-08-20 13:02:11,229 - INFO - 127.0.0.1 - - [20/Aug/2025 13:02:11] "GET /api/history HTTP/1.1" 200 -
+2025-08-20 16:42:17,517 - INFO - History file 'tron_history.csv' created with header.
+2025-08-20 16:42:17,519 - INFO - History file cleared and re-initialized.
+2025-08-20 16:42:17,520 - INFO - 127.0.0.1 - - [20/Aug/2025 16:42:17] "POST /api/history/clear HTTP/1.1" 200 -
+2025-08-22 17:30:41,442 - INFO - Google Generative AI configured successfully with free tier.
+2025-08-22 17:30:41,442 - INFO - Audio features disabled for web deployment.
+2025-08-22 17:30:41,442 - INFO - Gemini GenerativeModel and chat initialized with free tier settings.
+2025-08-22 17:30:41,442 - INFO - TRON Assistant initialized successfully.
+2025-08-22 17:30:41,446 - INFO - Starting TRON Assistant Flask server...
+2025-08-22 17:30:41,446 - INFO - Server will be accessible on port: 10000
+2025-08-22 17:30:41,452 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://10.99.221.128:10000
+2025-08-22 17:30:41,452 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-22 17:30:44,963 - INFO - Serving index.html
+2025-08-22 17:30:45,111 - INFO - 127.0.0.1 - - [22/Aug/2025 17:30:45] "GET / HTTP/1.1" 200 -
+2025-08-22 17:30:46,230 - INFO - 127.0.0.1 - - [22/Aug/2025 17:30:46] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-08-22 17:30:47,240 - INFO - 127.0.0.1 - - [22/Aug/2025 17:30:47] "GET /api/status HTTP/1.1" 200 -
+2025-10-24 12:50:18,782 - INFO - Tkinter modules mocked for web deployment
+2025-10-24 12:50:18,784 - INFO - Application setup complete
+2025-10-24 12:50:23,376 - INFO - Tkinter modules mocked for web deployment
+2025-10-24 12:50:23,377 - INFO - Application setup complete
+2025-10-24 12:50:24,627 - WARNING - API test failed: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-24 12:50:24,627 - ERROR - Failed to initialize TRONAssistant: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 242, in __init__
+    self.config = Config()
+  File "<string>", line 6, in __init__
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 111, in __post_init__
+    test_response = test_model.generate_content(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-24 12:50:24,634 - INFO - Gemini model initialized successfully
+2025-10-24 12:50:24,635 - INFO - TRON Assistant initialized
+2025-10-24 12:50:24,638 - INFO - Starting TRON Assistant server on port 10000
+2025-10-24 12:50:24,647 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://10.158.43.128:10000
+2025-10-24 12:50:24,647 - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 13:42:24,361 - INFO - Tkinter modules mocked for web deployment
+2025-10-24 13:42:24,363 - INFO - Application setup complete
+2025-10-24 13:42:25,772 - WARNING - API test failed: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-24 13:42:25,772 - ERROR - Failed to initialize TRONAssistant: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 242, in __init__
+    self.config = Config()
+  File "<string>", line 6, in __init__
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 111, in __post_init__
+    test_response = test_model.generate_content(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-24 13:42:25,776 - INFO - Gemini model initialized successfully
+2025-10-24 13:42:25,777 - INFO - TRON Assistant initialized
+2025-10-24 13:42:25,779 - INFO - Starting TRON Assistant server on port 10000
+2025-10-24 13:42:25,789 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://10.158.43.128:10000
+2025-10-24 13:42:25,789 - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 13:42:30,723 - INFO - Serving index.html
+2025-10-24 13:42:31,664 - INFO - 127.0.0.1 - - [24/Oct/2025 13:42:31] "GET / HTTP/1.1" 200 -
+2025-10-24 13:42:32,413 - INFO - 127.0.0.1 - - [24/Oct/2025 13:42:32] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-10-24 13:42:33,402 - INFO - 127.0.0.1 - - [24/Oct/2025 13:42:33] "GET /api/status HTTP/1.1" 200 -
+2025-10-24 13:42:59,627 - INFO - Processing: mode=quiz, query length=15
+2025-10-24 13:43:00,045 - ERROR - AI error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 578, in process_query
+    raw_response = handler(tron_instance.response_handler.chat, query)
+  File "C:\Users\pardu\PycharmProjects\TRON\features\quiz_generator.py", line 3, in generate_quiz
+    response = chat.send_message(prompt)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\generativeai\generative_models.py", line 367, in send_message
+    response = self.model.generate_content(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-24 13:43:00,082 - INFO - History saved successfully
+2025-10-24 13:43:00,084 - INFO - 127.0.0.1 - - [24/Oct/2025 13:43:00] "POST /api/process HTTP/1.1" 200 -
+2025-10-24 13:45:26,230 - INFO - Tkinter modules mocked for web deployment
+2025-10-24 13:45:26,231 - INFO - Application setup complete
+2025-10-24 13:45:28,023 - WARNING - API test failed: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-24 13:45:28,023 - ERROR - Failed to initialize TRONAssistant: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 242, in __init__
+    self.config = Config()
+  File "<string>", line 6, in __init__
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 111, in __post_init__
+    test_response = test_model.generate_content(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-24 13:45:28,028 - INFO - Gemini model initialized successfully
+2025-10-24 13:45:28,029 - INFO - TRON Assistant initialized
+2025-10-24 13:45:28,031 - INFO - Starting TRON Assistant server on port 10000
+2025-10-24 13:45:28,038 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://10.158.43.128:10000
+2025-10-24 13:45:28,039 - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 13:45:30,243 - INFO - Serving index.html
+2025-10-24 13:45:31,086 - INFO - 127.0.0.1 - - [24/Oct/2025 13:45:31] "GET / HTTP/1.1" 200 -
+2025-10-24 13:45:31,828 - INFO - 127.0.0.1 - - [24/Oct/2025 13:45:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-10-24 13:45:32,823 - INFO - 127.0.0.1 - - [24/Oct/2025 13:45:32] "GET /api/status HTTP/1.1" 200 -
+2025-10-24 13:45:54,413 - INFO - Processing: mode=quiz, query length=19
+2025-10-24 13:45:55,353 - ERROR - AI error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 578, in process_query
+    raw_response = handler(tron_instance.response_handler.chat, query)
+  File "C:\Users\pardu\PycharmProjects\TRON\features\quiz_generator.py", line 3, in generate_quiz
+    response = chat.send_message(prompt)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\generativeai\generative_models.py", line 367, in send_message
+    response = self.model.generate_content(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\pardu\PycharmProjects\TRON\venv\lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-10-24 13:45:55,360 - INFO - History saved successfully
+2025-10-24 13:45:55,366 - INFO - 127.0.0.1 - - [24/Oct/2025 13:45:55] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:09:19,053 - INFO - Tkinter modules mocked for web deployment
+2026-05-29 12:09:19,055 - INFO - Application setup complete
+2026-05-29 12:09:19,348 - WARNING - API test failed: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-05-29 12:09:19,349 - ERROR - Failed to initialize TRONAssistant: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 240, in __init__
+    self.config = Config()
+                  ^^^^^^^^
+  File "<string>", line 6, in __init__
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 109, in __post_init__
+    test_response = test_model.generate_content(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-05-29 12:09:19,353 - INFO - Gemini model initialized successfully
+2026-05-29 12:09:19,353 - INFO - TRON Assistant initialized
+2026-05-29 12:09:19,356 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 12:09:19,365 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 12:09:19,365 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 12:09:22,377 - INFO - Serving index.html
+2026-05-29 12:09:22,520 - INFO - 127.0.0.1 - - [29/May/2026 12:09:22] "GET / HTTP/1.1" 200 -
+2026-05-29 12:09:23,031 - INFO - 127.0.0.1 - - [29/May/2026 12:09:23] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 12:09:24,039 - INFO - 127.0.0.1 - - [29/May/2026 12:09:24] "GET /api/status HTTP/1.1" 200 -
+2026-05-29 12:10:08,556 - INFO - Processing: mode=quiz, query length=51
+2026-05-29 12:10:08,716 - ERROR - AI error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 576, in process_query
+    raw_response = handler(tron_instance.response_handler.chat, query)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TRON\features\quiz_generator.py", line 3, in generate_quiz
+    response = chat.send_message(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 367, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-05-29 12:10:08,742 - INFO - History saved successfully
+2026-05-29 12:10:08,743 - INFO - 127.0.0.1 - - [29/May/2026 12:10:08] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:12:21,713 - INFO - Tkinter modules mocked for web deployment
+2026-05-29 12:12:21,714 - INFO - Application setup complete
+2026-05-29 12:12:21,974 - WARNING - API test failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 37.964145881s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 37
+}
+]
+2026-05-29 12:12:21,975 - ERROR - Failed to initialize TRONAssistant: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 37.964145881s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 37
+}
+]
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 240, in __init__
+    self.config = Config()
+                  ^^^^^^^^
+  File "<string>", line 6, in __init__
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 109, in __post_init__
+    test_response = test_model.generate_content(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 37.964145881s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 37
+}
+]
+2026-05-29 12:12:21,979 - INFO - Gemini model initialized successfully
+2026-05-29 12:12:21,983 - INFO - TRON Assistant initialized
+2026-05-29 12:12:21,986 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 12:12:21,996 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 12:12:21,996 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 12:12:24,827 - INFO - Serving index.html
+2026-05-29 12:12:24,890 - INFO - 127.0.0.1 - - [29/May/2026 12:12:24] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 12:12:25,106 - INFO - 127.0.0.1 - - [29/May/2026 12:12:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 12:12:26,113 - INFO - 127.0.0.1 - - [29/May/2026 12:12:26] "GET /api/status HTTP/1.1" 200 -
+2026-05-29 12:12:45,941 - INFO - Processing: mode=quiz, query length=10
+2026-05-29 12:12:46,115 - ERROR - AI error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 13.850920804s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 13
+}
+]
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 576, in process_query
+    raw_response = handler(tron_instance.response_handler.chat, query)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TRON\features\quiz_generator.py", line 3, in generate_quiz
+    response = chat.send_message(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 367, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 13.850920804s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 13
+}
+]
+2026-05-29 12:12:46,131 - INFO - History saved successfully
+2026-05-29 12:12:46,131 - INFO - 127.0.0.1 - - [29/May/2026 12:12:46] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:15:12,679 - INFO - Tkinter modules mocked for web deployment
+2026-05-29 12:15:12,680 - INFO - Application setup complete
+2026-05-29 12:15:13,161 - WARNING - API test failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 46.791514854s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 46
+}
+]
+2026-05-29 12:15:13,161 - ERROR - Failed to initialize TRONAssistant: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 46.791514854s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 46
+}
+]
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 240, in __init__
+    self.config = Config()
+                  ^^^^^^^^
+  File "<string>", line 6, in __init__
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 109, in __post_init__
+    test_response = test_model.generate_content(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 46.791514854s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 46
+}
+]
+2026-05-29 12:15:13,170 - INFO - Gemini model initialized successfully
+2026-05-29 12:15:13,175 - INFO - TRON Assistant initialized
+2026-05-29 12:15:13,178 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 12:15:13,189 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 12:15:13,189 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 12:15:15,017 - INFO - Serving index.html
+2026-05-29 12:15:15,077 - INFO - 127.0.0.1 - - [29/May/2026 12:15:15] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 12:15:15,306 - INFO - 127.0.0.1 - - [29/May/2026 12:15:15] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 12:15:16,304 - INFO - 127.0.0.1 - - [29/May/2026 12:15:16] "GET /api/status HTTP/1.1" 200 -
+2026-05-29 12:15:32,280 - INFO - Processing: mode=quiz, query length=11
+2026-05-29 12:15:32,460 - ERROR - AI error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 27.498952774s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 27
+}
+]
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 576, in process_query
+    raw_response = handler(tron_instance.response_handler.chat, query)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TRON\features\quiz_generator.py", line 3, in generate_quiz
+    response = chat.send_message(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 367, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 27.498952774s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 27
+}
+]
+2026-05-29 12:15:32,471 - INFO - History saved successfully
+2026-05-29 12:15:32,471 - INFO - 127.0.0.1 - - [29/May/2026 12:15:32] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:16:33,979 - INFO - Tkinter modules mocked for web deployment
+2026-05-29 12:16:33,981 - INFO - Application setup complete
+2026-05-29 12:16:35,672 - WARNING - API test failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 24.27207106s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 24
+}
+]
+2026-05-29 12:16:35,673 - ERROR - Failed to initialize TRONAssistant: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 24.27207106s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 24
+}
+]
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 240, in __init__
+    self.config = Config()
+                  ^^^^^^^^
+  File "<string>", line 6, in __init__
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 109, in __post_init__
+    test_response = test_model.generate_content(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 24.27207106s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 24
+}
+]
+2026-05-29 12:16:35,676 - INFO - Gemini model initialized successfully
+2026-05-29 12:16:35,681 - INFO - TRON Assistant initialized
+2026-05-29 12:16:35,684 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 12:16:35,691 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 12:16:35,692 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 12:16:38,778 - INFO - Serving index.html
+2026-05-29 12:16:38,849 - INFO - 127.0.0.1 - - [29/May/2026 12:16:38] "GET / HTTP/1.1" 200 -
+2026-05-29 12:16:39,318 - INFO - 127.0.0.1 - - [29/May/2026 12:16:39] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 12:16:40,310 - INFO - 127.0.0.1 - - [29/May/2026 12:16:40] "GET /api/status HTTP/1.1" 200 -
+2026-05-29 12:17:05,543 - INFO - Processing: mode=doubt, query length=30
+2026-05-29 12:17:07,287 - ERROR - AI error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 52.678766963s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 52
+}
+]
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 576, in process_query
+    raw_response = handler(tron_instance.response_handler.chat, query)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TRON\features\doubt_solver.py", line 3, in solve_doubt
+    response = chat.send_message(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 367, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+Please retry in 52.678766963s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 52
+}
+]
+2026-05-29 12:17:07,301 - INFO - History saved successfully
+2026-05-29 12:17:07,303 - INFO - 127.0.0.1 - - [29/May/2026 12:17:07] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:17:13,060 - INFO - 127.0.0.1 - - [29/May/2026 12:17:13] "GET /api/history HTTP/1.1" 200 -
+2026-05-29 12:18:49,218 - INFO - Tkinter modules mocked for web deployment
+2026-05-29 12:18:49,219 - INFO - Application setup complete
+2026-05-29 12:18:49,220 - INFO - Google Generative AI configured successfully
+2026-05-29 12:18:49,220 - INFO - Audio features delegated to frontend
+2026-05-29 12:18:49,220 - INFO - Gemini model initialized successfully
+2026-05-29 12:18:49,220 - INFO - TRON Assistant initialized
+2026-05-29 12:18:49,223 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 12:18:49,238 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 12:18:49,238 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 12:20:43,747 - INFO - Tkinter modules mocked for web deployment
+2026-05-29 12:20:43,749 - INFO - Application setup complete
+2026-05-29 12:20:43,750 - INFO - Google Generative AI configured successfully
+2026-05-29 12:20:43,750 - INFO - Audio features delegated to frontend
+2026-05-29 12:20:43,750 - INFO - Gemini model initialized successfully
+2026-05-29 12:20:43,750 - INFO - TRON Assistant initialized
+2026-05-29 12:20:43,753 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 12:20:43,766 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 12:20:43,766 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 12:20:46,925 - INFO - Serving index.html
+2026-05-29 12:20:46,995 - INFO - 127.0.0.1 - - [29/May/2026 12:20:46] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 12:20:47,223 - INFO - 127.0.0.1 - - [29/May/2026 12:20:47] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 12:20:48,222 - INFO - 127.0.0.1 - - [29/May/2026 12:20:48] "GET /api/status HTTP/1.1" 200 -
+2026-05-29 12:21:05,127 - INFO - Processing: mode=doubt, query length=16
+2026-05-29 12:21:05,455 - ERROR - AI error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 54.492912488s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 54
+}
+]
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 567, in process_query
+    raw_response = handler(tron_instance.response_handler.chat, query)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TRON\features\doubt_solver.py", line 3, in solve_doubt
+    response = chat.send_message(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 367, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 54.492912488s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 54
+}
+]
+2026-05-29 12:21:05,469 - INFO - History saved successfully
+2026-05-29 12:21:05,469 - INFO - 127.0.0.1 - - [29/May/2026 12:21:05] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:24:12,437 - INFO - Tkinter modules mocked for web deployment
+2026-05-29 12:24:12,439 - INFO - Application setup complete
+2026-05-29 12:24:12,440 - INFO - Google Generative AI configured successfully
+2026-05-29 12:24:12,440 - INFO - Audio features delegated to frontend
+2026-05-29 12:24:12,440 - INFO - Gemini model initialized successfully
+2026-05-29 12:24:12,441 - INFO - TRON Assistant initialized
+2026-05-29 12:24:12,443 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 12:24:12,459 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 12:24:12,460 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 12:24:14,443 - INFO - Serving index.html
+2026-05-29 12:24:14,506 - INFO - 127.0.0.1 - - [29/May/2026 12:24:14] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 12:24:14,738 - INFO - 127.0.0.1 - - [29/May/2026 12:24:14] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 12:24:15,740 - INFO - 127.0.0.1 - - [29/May/2026 12:24:15] "GET /api/status HTTP/1.1" 200 -
+2026-05-29 12:24:34,503 - INFO - Processing: mode=quiz, query length=23
+2026-05-29 12:24:34,724 - ERROR - AI error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 567, in process_query
+    raw_response = handler(tron_instance.response_handler.chat, query)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TRON\features\quiz_generator.py", line 3, in generate_quiz
+    response = chat.send_message(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 367, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2026-05-29 12:24:34,743 - INFO - History saved successfully
+2026-05-29 12:24:34,745 - INFO - 127.0.0.1 - - [29/May/2026 12:24:34] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:24:54,622 - INFO - Tkinter modules mocked for web deployment
+2026-05-29 12:24:54,623 - INFO - Application setup complete
+2026-05-29 12:24:54,624 - INFO - Google Generative AI configured successfully
+2026-05-29 12:24:54,624 - INFO - Audio features delegated to frontend
+2026-05-29 12:24:54,624 - INFO - Gemini model initialized successfully
+2026-05-29 12:24:54,625 - INFO - TRON Assistant initialized
+2026-05-29 12:24:54,628 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 12:24:54,643 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 12:24:54,644 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 12:24:56,134 - INFO - Serving index.html
+2026-05-29 12:24:56,192 - INFO - 127.0.0.1 - - [29/May/2026 12:24:56] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 12:24:56,421 - INFO - 127.0.0.1 - - [29/May/2026 12:24:56] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 12:24:57,418 - INFO - 127.0.0.1 - - [29/May/2026 12:24:57] "GET /api/status HTTP/1.1" 200 -
+2026-05-29 12:25:15,422 - INFO - Processing: mode=quiz, query length=11
+2026-05-29 12:25:15,728 - ERROR - AI error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 44.216598189s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 44
+}
+]
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 567, in process_query
+    raw_response = handler(tron_instance.response_handler.chat, query)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TRON\features\quiz_generator.py", line 3, in generate_quiz
+    response = chat.send_message(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 367, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 44.216598189s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 44
+}
+]
+2026-05-29 12:25:15,744 - INFO - History saved successfully
+2026-05-29 12:25:15,744 - INFO - 127.0.0.1 - - [29/May/2026 12:25:15] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:30:08,425 - INFO - Tkinter modules mocked for web deployment
+2026-05-29 12:30:08,426 - INFO - Application setup complete
+2026-05-29 12:30:08,426 - INFO - Google Generative AI configured successfully
+2026-05-29 12:30:08,426 - INFO - Audio features delegated to frontend
+2026-05-29 12:30:08,427 - INFO - Gemini model initialized successfully
+2026-05-29 12:30:08,427 - INFO - TRON Assistant initialized
+2026-05-29 12:30:08,430 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 12:30:08,443 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 12:30:08,443 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 12:30:11,091 - INFO - Serving index.html
+2026-05-29 12:30:11,150 - INFO - 127.0.0.1 - - [29/May/2026 12:30:11] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 12:30:11,364 - INFO - 127.0.0.1 - - [29/May/2026 12:30:11] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 12:30:12,360 - INFO - 127.0.0.1 - - [29/May/2026 12:30:12] "GET /api/status HTTP/1.1" 200 -
+2026-05-29 12:30:20,951 - INFO - Processing: mode=quiz, query length=11
+2026-05-29 12:30:22,683 - ERROR - AI error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 37.277614837s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 37
+}
+]
+Traceback (most recent call last):
+  File "C:\Users\pardu\PycharmProjects\TRON\app.py", line 567, in process_query
+    raw_response = handler(tron_instance.response_handler.chat, query)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TRON\features\quiz_generator.py", line 3, in generate_quiz
+    response = chat.send_message(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 367, in send_message
+    response = self.model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\generativeai\generative_models.py", line 248, in generate_content
+    response = self._client.generate_content(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 566, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pardu\PycharmProjects\TORCH\.venv\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash
+Please retry in 37.277614837s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+}
+violations {
+}
+violations {
+}
+, retry_delay {
+  seconds: 37
+}
+]
+2026-05-29 12:30:22,701 - INFO - History saved successfully
+2026-05-29 12:30:22,701 - INFO - 127.0.0.1 - - [29/May/2026 12:30:22] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:48:11,404 - INFO - Tkinter modules mocked for web deployment
+2026-05-29 12:48:11,407 - INFO - Application setup complete
+2026-05-29 12:48:11,970 - INFO - Groq AI configured successfully
+2026-05-29 12:48:11,970 - INFO - Audio features delegated to frontend
+2026-05-29 12:48:13,172 - INFO - Groq model initialized successfully
+2026-05-29 12:48:13,173 - INFO - TRON Assistant initialized
+2026-05-29 12:48:13,177 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 12:48:13,196 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 12:48:13,197 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 12:48:15,159 - INFO - Serving index.html
+2026-05-29 12:48:15,220 - INFO - 127.0.0.1 - - [29/May/2026 12:48:15] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 12:48:15,469 - INFO - 127.0.0.1 - - [29/May/2026 12:48:15] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 12:48:16,471 - INFO - 127.0.0.1 - - [29/May/2026 12:48:16] "GET /api/status HTTP/1.1" 200 -
+2026-05-29 12:48:26,200 - INFO - Processing: mode=quiz, query length=11
+2026-05-29 12:48:27,529 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 12:48:27,544 - INFO - History saved successfully
+2026-05-29 12:48:27,544 - INFO - 127.0.0.1 - - [29/May/2026 12:48:27] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:50:27,288 - INFO - Serving index.html
+2026-05-29 12:50:27,302 - INFO - 127.0.0.1 - - [29/May/2026 12:50:27] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 12:50:27,436 - INFO - 127.0.0.1 - - [29/May/2026 12:50:27] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 12:50:28,442 - INFO - 127.0.0.1 - - [29/May/2026 12:50:28] "GET /api/status HTTP/1.1" 200 -
+2026-05-29 12:50:46,437 - INFO - Processing: mode=resume, query length=6
+2026-05-29 12:50:46,441 - INFO - History saved successfully
+2026-05-29 12:50:46,443 - INFO - 127.0.0.1 - - [29/May/2026 12:50:46] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:51:01,759 - INFO - Processing: mode=code, query length=6
+2026-05-29 12:51:02,275 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 12:51:02,275 - INFO - History saved successfully
+2026-05-29 12:51:02,275 - INFO - 127.0.0.1 - - [29/May/2026 12:51:02] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 12:54:39,376 - INFO - Tkinter modules mocked for web deployment
+2026-05-29 12:54:39,377 - INFO - Application setup complete
+2026-05-29 12:54:39,930 - INFO - Groq AI configured successfully
+2026-05-29 12:54:39,931 - INFO - Audio features delegated to frontend
+2026-05-29 12:54:40,384 - INFO - Groq model initialized successfully
+2026-05-29 12:54:40,384 - INFO - TRON Assistant initialized
+2026-05-29 12:54:40,388 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 12:54:40,405 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 12:54:40,405 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 12:54:42,487 - INFO - Serving index.html
+2026-05-29 12:54:42,560 - INFO - 127.0.0.1 - - [29/May/2026 12:54:42] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 12:54:42,791 - INFO - 127.0.0.1 - - [29/May/2026 12:54:42] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 12:54:43,800 - INFO - 127.0.0.1 - - [29/May/2026 12:54:43] "GET /api/status HTTP/1.1" 200 -
+2026-05-29 13:32:24,566 - INFO - Tkinter mocked for web deployment
+2026-05-29 13:32:24,568 - INFO - Application setup complete
+2026-05-29 13:32:25,138 - INFO - Groq AI configured successfully
+2026-05-29 13:32:25,138 - INFO - Audio features delegated to frontend
+2026-05-29 13:32:25,576 - INFO - Groq model initialized successfully
+2026-05-29 13:32:25,576 - INFO - TRON Assistant initialized
+2026-05-29 13:32:25,580 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 13:32:25,599 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 13:32:25,600 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 13:32:31,222 - INFO - 127.0.0.1 - - [29/May/2026 13:32:31] "GET / HTTP/1.1" 200 -
+2026-05-29 13:32:31,605 - INFO - 127.0.0.1 - - [29/May/2026 13:32:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 13:33:04,659 - INFO - Processing: mode=quiz, input_mode=text, query length=11
+2026-05-29 13:33:05,925 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 13:33:05,942 - INFO - 127.0.0.1 - - [29/May/2026 13:33:05] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 13:45:24,426 - INFO - Tkinter mocked for web deployment
+2026-05-29 13:45:24,427 - INFO - Application setup complete
+2026-05-29 13:45:24,933 - INFO - Groq AI configured successfully
+2026-05-29 13:45:24,933 - INFO - Audio features delegated to frontend
+2026-05-29 13:45:25,364 - INFO - Groq model initialized successfully
+2026-05-29 13:45:25,364 - INFO - TRON Assistant initialized
+2026-05-29 13:45:25,367 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 13:45:25,381 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 13:45:25,381 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 13:45:27,241 - INFO - 127.0.0.1 - - [29/May/2026 13:45:27] "GET / HTTP/1.1" 200 -
+2026-05-29 13:45:27,520 - INFO - 127.0.0.1 - - [29/May/2026 13:45:27] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 13:47:11,336 - INFO - Processing: mode=resume, input_mode=text, query length=98
+2026-05-29 13:47:11,340 - INFO - 127.0.0.1 - - [29/May/2026 13:47:11] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 13:47:46,553 - INFO - 127.0.0.1 - - [29/May/2026 13:47:46] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 13:47:46,771 - INFO - 127.0.0.1 - - [29/May/2026 13:47:46] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 13:47:48,089 - INFO - 127.0.0.1 - - [29/May/2026 13:47:48] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 13:47:48,244 - INFO - 127.0.0.1 - - [29/May/2026 13:47:48] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 13:48:21,499 - INFO - Processing: mode=resume, input_mode=text, query length=84
+2026-05-29 13:48:21,503 - INFO - 127.0.0.1 - - [29/May/2026 13:48:21] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 13:48:58,763 - INFO - Processing: mode=doubt, input_mode=text, query length=21
+2026-05-29 13:49:00,442 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 13:49:00,459 - INFO - 127.0.0.1 - - [29/May/2026 13:49:00] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 13:49:20,258 - INFO - Processing: mode=doubt, input_mode=speech, query length=60
+2026-05-29 13:49:23,119 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 13:49:23,135 - INFO - 127.0.0.1 - - [29/May/2026 13:49:23] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 14:00:11,950 - INFO - Tkinter mocked for web deployment
+2026-05-29 14:00:11,952 - INFO - Application setup complete
+2026-05-29 14:00:12,437 - INFO - Groq AI configured successfully
+2026-05-29 14:00:12,437 - INFO - Audio features delegated to frontend
+2026-05-29 14:00:12,859 - INFO - Groq model initialized successfully
+2026-05-29 14:00:12,859 - INFO - TRON Assistant initialized
+2026-05-29 14:00:12,862 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 14:00:12,878 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 14:00:12,878 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 14:00:16,710 - INFO - 127.0.0.1 - - [29/May/2026 14:00:16] "[36mGET / HTTP/1.1[0m" 304 -
+2026-05-29 14:00:16,994 - INFO - 127.0.0.1 - - [29/May/2026 14:00:16] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 14:00:43,500 - INFO - Processing: mode=doubt, input_mode=text, query length=8
+2026-05-29 14:00:45,081 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 14:00:45,103 - INFO - 127.0.0.1 - - [29/May/2026 14:00:45] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 14:01:42,692 - INFO - Processing: mode=code, input_mode=text, query length=298
+2026-05-29 14:01:44,654 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-29 14:01:44,658 - INFO - 127.0.0.1 - - [29/May/2026 14:01:44] "POST /api/process HTTP/1.1" 200 -
+2026-05-29 14:13:32,511 - INFO - Tkinter mocked for web deployment
+2026-05-29 14:13:32,512 - INFO - Application setup complete
+2026-05-29 14:13:33,028 - INFO - Groq AI configured successfully
+2026-05-29 14:13:33,028 - INFO - Audio features delegated to frontend
+2026-05-29 14:13:33,438 - INFO - Groq model initialized successfully
+2026-05-29 14:13:33,439 - INFO - TRON Assistant initialized
+2026-05-29 14:13:33,442 - INFO - Starting TRON Assistant server on port 10000
+2026-05-29 14:13:33,456 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.14:10000
+2026-05-29 14:13:33,456 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-29 14:13:35,068 - INFO - 127.0.0.1 - - [29/May/2026 14:13:35] "GET / HTTP/1.1" 200 -
+2026-05-29 14:13:35,347 - INFO - 127.0.0.1 - - [29/May/2026 14:13:35] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-05-29 14:14:18,353 - INFO - Processing: mode=resume, input_mode=text, query length=91
+2026-05-29 14:14:18,353 - INFO - 127.0.0.1 - - [29/May/2026 14:14:18] "POST /api/process HTTP/1.1" 200 -
+2026-06-02 12:10:50,049 - INFO - Tkinter mocked for web deployment
+2026-06-02 12:10:50,053 - INFO - Application setup complete
+2026-06-02 12:10:50,862 - INFO - Groq AI configured successfully
+2026-06-02 12:10:50,863 - INFO - Audio features delegated to frontend
+2026-06-02 12:10:51,465 - INFO - Groq model initialized successfully
+2026-06-02 12:10:51,466 - INFO - TRON Assistant initialized
+2026-06-02 12:10:51,473 - INFO - Starting TRON Assistant server on port 10000
+2026-06-02 12:10:51,566 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://10.69.75.128:10000
+2026-06-02 12:10:51,567 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 12:10:55,823 - INFO - 127.0.0.1 - - [02/Jun/2026 12:10:55] "GET / HTTP/1.1" 200 -
+2026-06-02 12:10:56,637 - INFO - 127.0.0.1 - - [02/Jun/2026 12:10:56] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-06-02 17:01:12,326 - INFO - Tkinter mocked for web deployment
+2026-06-02 17:01:12,330 - INFO - Application setup complete
+2026-06-02 17:01:13,383 - INFO - Groq AI configured successfully
+2026-06-02 17:01:13,384 - INFO - Audio features delegated to frontend
+2026-06-02 17:01:14,097 - INFO - Groq model initialized successfully
+2026-06-02 17:01:14,097 - INFO - TRON Assistant initialized
+2026-06-02 17:01:14,101 - INFO - Starting TRON Assistant server on port 10000
+2026-06-02 17:01:14,122 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://10.20.1.9:10000
+2026-06-02 17:01:14,122 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-02 17:01:16,900 - INFO - 127.0.0.1 - - [02/Jun/2026 17:01:16] "[36mGET / HTTP/1.1[0m" 304 -
+2026-06-02 17:01:17,299 - INFO - 127.0.0.1 - - [02/Jun/2026 17:01:17] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-06-02 17:02:01,298 - INFO - Processing: mode=quiz, input_mode=text, query length=11
+2026-06-02 17:02:02,735 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-02 17:02:02,799 - INFO - 127.0.0.1 - - [02/Jun/2026 17:02:02] "POST /api/process HTTP/1.1" 200 -
+2026-06-15 08:02:43,396 - INFO - Tkinter mocked for web deployment
+2026-06-15 08:02:43,399 - INFO - Application setup complete
+2026-06-15 08:02:44,022 - INFO - Groq AI configured successfully
+2026-06-15 08:02:44,023 - INFO - Audio features delegated to frontend
+2026-06-15 08:02:44,526 - INFO - Groq model initialized successfully
+2026-06-15 08:02:44,527 - INFO - TRON Assistant initialized
+2026-06-15 08:02:44,530 - INFO - Starting TRON Assistant server on port 10000
+2026-06-15 08:02:44,551 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://10.20.0.36:10000
+2026-06-15 08:02:44,552 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-15 08:02:49,104 - INFO - 127.0.0.1 - - [15/Jun/2026 08:02:49] "GET / HTTP/1.1" 200 -
+2026-06-15 08:02:49,619 - INFO - 127.0.0.1 - - [15/Jun/2026 08:02:49] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-06-15 08:03:08,265 - INFO - File uploaded: Saiteja resume.pdf
+2026-06-15 08:03:08,595 - INFO - 127.0.0.1 - - [15/Jun/2026 08:03:08] "POST /api/upload HTTP/1.1" 200 -
+2026-06-15 08:03:28,588 - INFO - Processing: mode=resume, input_mode=text, query length=26
+2026-06-15 08:03:31,287 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-15 08:03:31,380 - INFO - 127.0.0.1 - - [15/Jun/2026 08:03:31] "POST /api/process HTTP/1.1" 200 -
+2026-06-15 08:04:36,701 - INFO - Processing: mode=resume, input_mode=text, query length=0
+2026-06-15 08:04:37,938 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-15 08:04:37,949 - INFO - 127.0.0.1 - - [15/Jun/2026 08:04:37] "POST /api/process HTTP/1.1" 200 -
+2026-06-15 08:13:04,764 - INFO - Tkinter mocked for web deployment
+2026-06-15 08:13:04,768 - INFO - Application setup complete
+2026-06-15 08:13:06,306 - INFO - Groq AI configured successfully
+2026-06-15 08:13:06,306 - INFO - Audio features delegated to frontend
+2026-06-15 08:13:07,215 - INFO - Groq model initialized successfully
+2026-06-15 08:13:07,215 - INFO - TRON Assistant initialized
+2026-06-15 08:13:07,222 - INFO - Starting TRON Assistant server on port 10000
+2026-06-15 08:13:07,248 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://10.20.0.36:10000
+2026-06-15 08:13:07,249 - INFO - [33mPress CTRL+C to quit[0m
+2026-06-15 08:13:19,730 - INFO - 127.0.0.1 - - [15/Jun/2026 08:13:19] "[36mGET / HTTP/1.1[0m" 304 -
+2026-06-15 08:13:20,234 - INFO - 127.0.0.1 - - [15/Jun/2026 08:13:20] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-06-15 08:15:47,417 - INFO - 10.20.0.36 - - [15/Jun/2026 08:15:47] "GET / HTTP/1.1" 200 -
+2026-06-15 08:15:47,996 - INFO - 10.20.0.36 - - [15/Jun/2026 08:15:47] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-06-15 08:16:17,351 - INFO - 127.0.0.1 - - [15/Jun/2026 08:16:17] "[36mGET / HTTP/1.1[0m" 304 -
+2026-06-15 08:16:17,747 - INFO - 127.0.0.1 - - [15/Jun/2026 08:16:17] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-06-15 08:17:51,083 - INFO - 10.20.0.36 - - [15/Jun/2026 08:17:51] "[36mGET / HTTP/1.1[0m" 304 -
+2026-06-15 08:17:51,647 - INFO - 10.20.0.36 - - [15/Jun/2026 08:17:51] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2026-06-15 08:18:01,432 - INFO - File uploaded: Saiteja resume.pdf
+2026-06-15 08:18:01,890 - INFO - Extracted 1849 characters from uploads\Saiteja resume.pdf
+2026-06-15 08:18:01,892 - INFO - 10.20.0.36 - - [15/Jun/2026 08:18:01] "POST /api/upload HTTP/1.1" 200 -
+2026-06-15 08:18:03,151 - INFO - Processing: mode=resume, input_mode=text, query length=0
+2026-06-15 08:18:06,998 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-15 08:18:07,026 - INFO - 10.20.0.36 - - [15/Jun/2026 08:18:07] "POST /api/process HTTP/1.1" 200 -

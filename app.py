@@ -1,19 +1,17 @@
 import os
 import logging
 import logging.handlers
-import google.generativeai as genai
+from groq import Groq
 from dataclasses import dataclass
 import sys
 import re
 import time
 import csv
 import threading
-from typing import Optional
 from flask import Flask, request, jsonify, send_from_directory, abort
 from flask_cors import CORS
 import json
 from datetime import datetime
-from unittest.mock import MagicMock
 
 # Import features
 from features import doubt_solver, quiz_generator, code_debugger, resume_analyzer
@@ -23,216 +21,141 @@ log_handler = logging.handlers.RotatingFileHandler('tron_server.log', maxBytes=1
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        log_handler,
-        logging.StreamHandler()
-    ]
+    handlers=[log_handler, logging.StreamHandler()]
 )
 logger = logging.getLogger(__name__)
 
-# Use environment variable for API key in production
-GOOGLE_API_KEY = "AIzaSyC-eEz4laooDegpAES5158fl2ILJ-UTOqQ"
-HISTORY_FILE = "tron_history.csv"
-MAX_HISTORY_ENTRIES = 1000  # Limit history file size
+# =====================================================
+# 🔑 API KEY CONFIGURATION
+# Paste your Groq API key below (get it from https://console.groq.com)
+# =====================================================
+GROQ_API_KEY = "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"   # <-- PASTE YOUR GROQ API KEY HERE e.g. "gsk_xxxxxxxxxxxx"
 
+# Falls back to environment variable if the field above is left empty
+if not GROQ_API_KEY:
+    GROQ_API_KEY = os.environ.get('GROQ_API_KEY')
+if not GROQ_API_KEY:
+    logger.error("GROQ_API_KEY is not set. Paste your key in the field above.")
+
+HISTORY_FILE = "tron_history.csv"
+MAX_HISTORY_ENTRIES = 1000
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# Create Flask app - THIS IS CRITICAL FOR GUNICORN
 app = Flask(__name__, static_folder='.')
-CORS(app, origins=["*"])  # Allow all origins for deployment, restrict in production
-
+CORS(app, origins=["*"])
 ALLOWED_EXTENSIONS = {'pdf', 'doc', 'docx'}
 
 
 class MockTkinter:
-    def __init__(self, *args, **kwargs):
-        pass
-
-    def __getattr__(self, name):
-        return MockTkinter()
-
-    def __call__(self, *args, **kwargs):
-        return MockTkinter()
+    def __init__(self, *args, **kwargs): pass
+    def __getattr__(self, name): return MockTkinter()
+    def __call__(self, *args, **kwargs): return MockTkinter()
 
 
-# Create mock modules
-mock_tk = MockTkinter()
-mock_tk.Tk = MockTkinter
-mock_tk.filedialog = MockTkinter()
-mock_tk.filedialog.askopenfilename = lambda **kwargs: None
-mock_tk.messagebox = MockTkinter()
+def setup_mock_tkinter():
+    mock_tk = MockTkinter()
+    mock_tk.Tk = MockTkinter
+    mock_tk.filedialog = MockTkinter()
+    mock_tk.filedialog.askopenfilename = lambda **kwargs: None
+    mock_tk.messagebox = MockTkinter()
+    for mod in ['tkinter','tkinter.filedialog','tkinter.messagebox','tkinter.ttk','tkinter.font','tkinter.constants','_tkinter']:
+        sys.modules[mod] = mock_tk
+    logger.info("Tkinter mocked for web deployment")
 
-# Mock all tkinter-related modules
-sys.modules['tkinter'] = mock_tk
-sys.modules['tkinter.filedialog'] = mock_tk.filedialog
-sys.modules['tkinter.messagebox'] = mock_tk.messagebox
-sys.modules['tkinter.ttk'] = mock_tk
-sys.modules['tkinter.font'] = mock_tk
-sys.modules['tkinter.constants'] = mock_tk
-sys.modules['_tkinter'] = mock_tk
-
-print("Tkinter modules mocked for web deployment")
+setup_mock_tkinter()
 
 
 @dataclass
 class Config:
-    input_mode: str = "text"  # Default to text-only for web deployment
+    input_mode: str = "text"
     max_retries: int = 3
     retry_delay: int = 2
 
     def __post_init__(self):
+        if not GROQ_API_KEY:
+            raise ValueError("GROQ_API_KEY is required. Set it as an environment variable.")
         try:
-            if not GOOGLE_API_KEY:
-                logger.error("GOOGLE_API_KEY environment variable not set")
-                raise ValueError("GOOGLE_API_KEY is required")
-
-            # Configure Google AI with free tier settings
-            genai.configure(api_key=GOOGLE_API_KEY)
-
-            # Test API key validity with minimal request
-            try:
-                test_model = genai.GenerativeModel('gemini-1.5-flash')
-                # Use a very simple test to minimize quota usage
-                test_response = test_model.generate_content(
-                    "Hi",
-                    generation_config=genai.types.GenerationConfig(
-                        max_output_tokens=10,  # Minimal tokens for test
-                        temperature=0.1
-                    )
-                )
-                logger.info("Google Generative AI configured successfully with free tier.")
-            except Exception as test_e:
-                logger.warning(f"API test failed but continuing: {test_e}")
-                # Don't fail initialization if test fails - might be temporary
-
+            Groq(api_key=GROQ_API_KEY)
+            logger.info("Groq AI configured successfully")
         except Exception as e:
-            logger.error(f"Failed to configure Google Generative AI: {e}", exc_info=True)
-            # Don't call sys.exit() here - let the application handle the error gracefully
-            raise e
+            logger.warning(f"Groq API configuration failed: {e}")
+            raise
 
 
 class AudioHandler:
-    """Audio handler that works in web deployment (audio features disabled)"""
-
     def __init__(self, config: Config):
         self.config = config
-        # Audio features disabled for web deployment
         self.audio_available = False
-        logger.info("Audio features disabled for web deployment.")
+        logger.info("Audio features delegated to frontend")
 
-    def speak(self, text: str):
-        """Placeholder for speech - handled by frontend"""
-        logger.info(f"Speech request received (handled by frontend): {text[:50]}...")
-        return "Speech handled by frontend"
-
-    def stop_speech(self):
-        """Placeholder for stop speech - handled by frontend"""
-        logger.info("Stop speech request received (handled by frontend).")
-        return "Stop speech handled by frontend"
-
-    def listen(self) -> Optional[str]:
-        """Placeholder for listening - handled by frontend"""
-        logger.info("Listen request received (handled by frontend).")
-        return None
+    def speak(self, text): return "Speech handled by frontend"
+    def stop_speech(self): return "Stop speech handled by frontend"
+    def listen(self): return None
 
 
 class ResponseHandler:
     def __init__(self):
         try:
-            # Configure model with free tier optimized settings
-            generation_config = genai.types.GenerationConfig(
-                max_output_tokens=1000,  # Reduced for free tier
-                temperature=0.7,
-                top_p=0.8,
-                top_k=40
-            )
-
-            # Configure safety settings to be less restrictive for educational content
-            safety_settings = [
-                {
-                    "category": "HARM_CATEGORY_HARASSMENT",
-                    "threshold": "BLOCK_MEDIUM_AND_ABOVE"
-                },
-                {
-                    "category": "HARM_CATEGORY_HATE_SPEECH",
-                    "threshold": "BLOCK_MEDIUM_AND_ABOVE"
-                },
-                {
-                    "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                    "threshold": "BLOCK_MEDIUM_AND_ABOVE"
-                },
-                {
-                    "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
-                    "threshold": "BLOCK_MEDIUM_AND_ABOVE"
-                }
-            ]
-
-            self.model = genai.GenerativeModel(
-                'gemini-1.5-flash',
-                generation_config=generation_config,
-                safety_settings=safety_settings
-            )
-            self.chat = self.model.start_chat(history=[])
-            logger.info("Gemini GenerativeModel and chat initialized with free tier settings.")
+            self.client = Groq(api_key=GROQ_API_KEY)
+            self.history = []
+            self.model = True
+            self.chat = self
+            logger.info("Groq model initialized successfully")
         except Exception as e:
-            logger.error(f"Failed to initialize Gemini GenerativeModel: {e}", exc_info=True)
+            logger.error(f"Failed to initialize Groq model: {e}", exc_info=True)
+            self.client = None
             self.model = None
             self.chat = None
 
-    def get_response(self, prompt: str) -> str:
-        if not self.model or not self.chat:
-            logger.error("Generative model not initialized.")
-            return "Error: AI service is unavailable. Please check server configuration."
+    def send_message(self, prompt):
+        self._last_response = self.get_response(prompt)
+        return self
 
-        max_retries = 3
-        retry_delay = 2
+    @property
+    def text(self):
+        return getattr(self, '_last_response', '')
 
-        for attempt in range(max_retries):
+    def get_response(self, prompt):
+        if not self.client:
+            return "Error: AI service unavailable. Please check configuration."
+
+        for attempt in range(3):
             try:
-                logger.debug(f"Sending prompt to Gemini (attempt {attempt + 1}): {prompt[:150]}...")
-
-                # Add rate limiting delay between requests
                 if attempt > 0:
-                    time.sleep(retry_delay * attempt)
+                    time.sleep(2 * attempt)
 
-                response = self.chat.send_message(prompt)
-                response_text = getattr(response, 'text', '').strip()
-                logger.debug(f"Received raw response from Gemini (first 150 chars): {response_text[:150]}...")
-                return response_text if response_text else "No meaningful response generated."
+                self.history.append({"role": "user", "content": prompt})
+                response = self.client.chat.completions.create(
+                    model="llama-3.3-70b-versatile",
+                    messages=self.history,
+                    max_tokens=1000,
+                    temperature=0.7,
+                )
+                response_text = response.choices[0].message.content.strip()
+                self.history.append({"role": "assistant", "content": response_text})
+                if len(self.history) > 20:
+                    self.history = self.history[-20:]
+                return response_text or "No meaningful response generated."
 
             except Exception as e:
                 error_message = str(e).lower()
-
-                # Handle quota exceeded errors
-                if 'quota' in error_message or 'limit' in error_message:
-                    logger.error(f"Quota/Rate limit error (attempt {attempt + 1}): {e}")
-                    if attempt < max_retries - 1:
-                        wait_time = retry_delay * (2 ** attempt)  # Exponential backoff
-                        logger.info(f"Retrying in {wait_time} seconds...")
-                        time.sleep(wait_time)
+                if 'quota' in error_message or 'rate' in error_message or 'limit' in error_message:
+                    logger.error(f"Rate limit error (attempt {attempt + 1}): {e}")
+                    if attempt < 2:
+                        time.sleep(2 ** (attempt + 1))
                         continue
-                    else:
-                        return "Error: API quota exceeded. Please try again later or check your Google AI Studio quota."
-
-                # Handle other API errors
-                elif 'safety' in error_message:
-                    logger.warning(f"Safety filter triggered: {e}")
-                    return "I cannot provide a response to this query due to safety guidelines. Please rephrase your question."
-
+                    return "Error: API rate limit exceeded. Please try again later."
                 elif 'invalid' in error_message and 'api' in error_message:
-                    logger.error(f"Invalid API key error: {e}")
-                    return "Error: Invalid API configuration. Please check the API key."
-
+                    return "Error: Invalid API configuration."
                 else:
-                    logger.error(f"Error getting response from Gemini (attempt {attempt + 1}): {e}", exc_info=True)
-                    if attempt < max_retries - 1:
-                        time.sleep(retry_delay)
+                    logger.error(f"Error (attempt {attempt + 1}): {e}", exc_info=True)
+                    if attempt < 2:
+                        time.sleep(2)
                         continue
-                    else:
-                        return f"Error: Failed to generate response after {max_retries} attempts. Please try again later."
+                    return f"Error: Failed after 3 attempts."
 
-        return "Error: Maximum retry attempts reached. Please try again later."
+        return "Error: Maximum retries reached."
 
 
 class TRONAssistant:
@@ -241,18 +164,16 @@ class TRONAssistant:
             self.config = Config()
             self.audio_handler = AudioHandler(self.config)
             self.response_handler = ResponseHandler()
-            self.speech_thread: Optional[threading.Thread] = None
+            self.speech_thread = None
         except Exception as e:
             logger.error(f"Failed to initialize TRONAssistant: {e}", exc_info=True)
-            # Create a fallback configuration
             self.config = None
             self.audio_handler = None
-            self.response_handler = ResponseHandler()  # Try to at least initialize this
+            self.response_handler = ResponseHandler()
             self.speech_thread = None
 
-    def save_history(self, mode: str, query: str, response: str):
+    def save_history(self, mode, query, response):
         try:
-            # Check history size and truncate if necessary
             if os.path.exists(HISTORY_FILE):
                 with open(HISTORY_FILE, 'r', encoding='utf-8') as f:
                     lines = list(csv.reader(f))
@@ -262,490 +183,198 @@ class TRONAssistant:
                             writer.writerow(['timestamp', 'mode', 'query', 'response'])
                             writer.writerows(lines[-MAX_HISTORY_ENTRIES + 1:])
 
-            with open(HISTORY_FILE, mode='a', newline='', encoding='utf-8') as file:
+            with open(HISTORY_FILE, 'a', newline='', encoding='utf-8') as file:
                 writer = csv.writer(file)
                 writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), mode, query, response])
 
-            project_dir = "projects"
-            if not os.path.exists(project_dir):
-                os.makedirs(project_dir)
-            output_file = os.path.join(project_dir, "TRON_project_conversation.txt")
+            os.makedirs("projects", exist_ok=True)
+            output_file = os.path.join("projects", "TRON_project_conversation.txt")
             with open(output_file, 'a', encoding='utf-8') as f:
                 f.write(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {mode}\n")
-                f.write(f"Query: {query}\n")
-                f.write(f"Response: {response}\n\n")
-            logger.info("History saved successfully.")
-        except IOError as e:
-            logger.error(f"Failed to write to history file: {e}", exc_info=True)
+                f.write(f"Query: {query}\nResponse: {response}\n\n")
         except Exception as e:
-            logger.error(f"An unexpected error occurred while saving history: {e}", exc_info=True)
+            logger.error(f"Failed to save history: {e}", exc_info=True)
 
-    def format_response_for_web(self, response: str, mode: str) -> str:
-        if mode.lower() == 'quiz':
-            formatted = f"""
-            <div class="space-y-4">
-                <div class="border-l-4 border-cyan-400 pl-4">
-                    <h4 class="text-cyan-400 font-semibold mb-2">🧠 Quiz Generated Successfully</h4>
-                </div>
-                <div class="bg-gray-800 p-4 rounded border border-cyan-600">
-                    <div class="prose prose-invert max-w-none">
-                        {self._format_quiz_content(response)}
-                    </div>
-                </div>
-                <div class="mt-4 p-3 bg-cyan-900 bg-opacity-30 rounded border border-cyan-600">
-                    <strong class="text-cyan-300">✅ Quiz Ready for Practice!</strong>
-                </div>
-            </div>
-            """
-        elif mode.lower() == 'doubt':
-            formatted = f"""
-            <div class="space-y-4">
-                <div class="border-l-4 border-purple-400 pl-4">
-                    <h4 class="text-purple-400 font-semibold mb-2">🤔 Doubt Resolved</h4>
-                </div>
-                <div class="bg-gray-800 p-4 rounded border border-purple-600">
-                    <div class="prose prose-invert max-w-none">
-                        {self._format_explanation_content(response)}
-                    </div>
-                </div>
-                <div class="mt-4 p-3 bg-purple-900 bg-opacity-30 rounded border border-purple-600">
-                    <strong class="text-purple-300">💡 Hope this clarifies your doubt!</strong>
-                </div>
-            </div>
-            """
-        elif mode.lower() == 'code':
-            formatted = f"""
-            <div class="space-y-4">
-                <div class="border-l-4 border-red-400 pl-4">
-                    <h4 class="text-red-400 font-semibold mb-2">🐛 Code Analysis Complete</h4>
-                </div>
-                <div class="bg-gray-800 p-4 rounded border border-red-600">
-                    <div class="prose prose-invert max-w-none">
-                        {self._format_code_content(response)}
-                    </div>
-                </div>
-                <div class="mt-4 p-3 bg-red-900 bg-opacity-30 rounded border border-red-600">
-                    <strong class="text-red-300">🔧 Code debugging recommendations provided</strong>
-                </div>
-            </div>
-            """
-        elif mode.lower() == 'resume':
-            formatted = f"""
-            <div class="space-y-4">
-                <div class="border-l-4 border-yellow-400 pl-4">
-                    <h4 class="text-yellow-400 font-semibold mb-2">📄 Resume Analysis Complete</h4>
-                </div>
-                <div class="bg-gray-800 p-4 rounded border border-yellow-600">
-                    <div class="prose prose-invert max-w-none">
-                        {self._format_resume_content(response)}
-                    </div>
-                </div>
-                <div class="mt-4 p-3 bg-yellow-900 bg-opacity-30 rounded border border-yellow-600">
-                    <strong class="text-yellow-300">📊 Professional analysis and recommendations provided</strong>
-                </div>
-            </div>
-            """
-        else:
-            safe_response = response.replace('<', '&lt;').replace('>', '&gt;').replace(chr(10), '<br>')
-            formatted = f"""
-            <div class="space-y-4">
-                <div class="bg-gray-800 p-4 rounded border border-gray-600">
-                    <div class="prose prose-invert max-w-none">
-                        <p class="text-gray-200">{safe_response}</p>
-                    </div>
-                </div>
-            </div>
-            """
-        return formatted
+    def format_response_for_web(self, response, mode):
+        mode = mode.lower()
+        formatters = {
+            'quiz': self._format_quiz_content,
+            'doubt': self._format_explanation_content,
+            'code': self._format_code_content,
+            'resume': self._format_resume_content
+        }
+        if mode in formatters:
+            try:
+                formatted_content = formatters[mode](response)
+                return self._wrap_formatted_content(formatted_content, mode)
+            except Exception as e:
+                logger.error(f"Formatting error for {mode}: {e}", exc_info=True)
+                return self._format_fallback(response)
+        return self._format_fallback(response)
 
-    def _format_quiz_content(self, content: str) -> str:
+    def _wrap_formatted_content(self, content, mode):
+        mode_config = {
+            'quiz': {'color': 'cyan', 'icon': '🧠', 'title': 'Quiz Generated'},
+            'doubt': {'color': 'purple', 'icon': '🤔', 'title': 'Doubt Resolved'},
+            'code': {'color': 'red', 'icon': '🐛', 'title': 'Code Analysis'},
+            'resume': {'color': 'yellow', 'icon': '📄', 'title': 'Resume Analysis'}
+        }
+        cfg = mode_config.get(mode, {'color': 'gray', 'icon': '', 'title': 'Response'})
+        return f"""
+        <div class="space-y-4">
+            <div class="border-l-4 border-{cfg['color']}-400 pl-4">
+                <h4 class="text-{cfg['color']}-400 font-semibold mb-2">{cfg['icon']} {cfg['title']}</h4>
+            </div>
+            <div class="bg-gray-800 p-4 rounded border border-{cfg['color']}-600">
+                <div class="prose prose-invert max-w-none">{content}</div>
+            </div>
+        </div>"""
+
+    def _format_fallback(self, response):
+        safe = response.replace('&','&amp;').replace('<','&lt;').replace('>','&gt;').replace('\n','<br>')
+        return f'<div class="space-y-4"><div class="bg-gray-800 p-4 rounded border border-gray-600"><div class="prose prose-invert max-w-none"><p class="text-gray-200">{safe}</p></div></div></div>'
+
+    def _format_quiz_content(self, content):
         lines = content.split('\n')
         formatted_lines = []
         question_count = 0
-
         for line in lines:
             line = line.strip()
-            if not line:
-                continue
-            if any(marker in line.lower() for marker in ['question', 'q:', 'q.']) and not line.startswith(
-                    ('a)', 'b)', 'c)', 'd)')):
+            if not line: continue
+            # Escape first, then apply markdown bold
+            safe = self._escape_html(line)
+            safe = re.sub(r'\*\*(.*?)\*\*', r'<strong class="text-cyan-300">\1</strong>', safe)
+            if any(m in line.lower() for m in ['question','q:','q.']) and not line.startswith(('a)','b)','c)','d)')):
                 question_count += 1
-                if question_count > 1:
-                    formatted_lines.append('</div>')  # Close previous question block
-                    formatted_lines.append(
-                        '<div class="question-block mt-6 p-3 bg-gray-700 rounded border border-cyan-500">')
-                else:
-                    formatted_lines.append(
-                        '<div class="question-block mt-4 p-3 bg-gray-700 rounded border border-cyan-500">')
+                if question_count > 1: formatted_lines.append('</div>')
+                formatted_lines.append('<div class="question-block mt-4 p-3 bg-gray-700 rounded border border-cyan-500">')
                 formatted_lines.append(f'<strong class="text-cyan-300">Question {question_count}:</strong>')
-                formatted_lines.append(f'<p class="mt-2 text-gray-200">{line}</p>')
-            elif line.startswith(('a)', 'b)', 'c)', 'd)', 'A)', 'B)', 'C)', 'D)')):
-                formatted_lines.append(f'<div class="option ml-4 mt-1 text-gray-300">• {line}</div>')
-            elif 'answer' in line.lower() and not line.startswith(('a)', 'b)', 'c)', 'd)')):
-                formatted_lines.append(
-                    '<div class="answer mt-2 p-2 bg-green-800 bg-opacity-50 rounded border border-green-500">')
-                formatted_lines.append(f'<strong class="text-green-300">{line}</strong>')
+                formatted_lines.append(f'<p class="mt-2 text-gray-200">{safe}</p>')
+            elif line.startswith(('a)','b)','c)','d)','A)','B)','C)','D)')):
+                formatted_lines.append(f'<div class="option ml-4 mt-1 text-gray-300">• {safe}</div>')
+            elif 'answer' in line.lower():
+                formatted_lines.append('<div class="answer mt-2 p-2 bg-green-800 bg-opacity-50 rounded border border-green-500">')
+                formatted_lines.append(f'<strong class="text-green-300">{safe}</strong>')
                 formatted_lines.append('</div>')
             else:
-                formatted_lines.append(f'<p class="text-gray-200">{line}</p>')
-        if question_count > 0:
-            formatted_lines.append('</div>')  # Close last question block
+                formatted_lines.append(f'<p class="text-gray-200">{safe}</p>')
+        if question_count > 0: formatted_lines.append('</div>')
         return ''.join(formatted_lines)
 
-    def _format_explanation_content(self, content: str) -> str:
-        try:
-            # Step 1: Handle **bold text** patterns first (including standalone headings)
-            content = re.sub(r'\*\*(.*?)\*\*',
-                             r'<div class="clean-heading text-purple-300 font-bold mt-4 mb-2">\1</div>', content)
+    def _format_explanation_content(self, content):
+        # Escape HTML first, then apply markdown so tags aren't double-escaped
+        content = self._escape_html(content)
+        content = re.sub(r'\*\*(.*?)\*\*', r'<strong class="text-purple-300">\1</strong>', content)
+        content = re.sub(r'\*(.*?)\*', r'<em class="text-purple-200">\1</em>', content)
+        content = re.sub(r'`(.*?)`', r'<code class="bg-gray-700 px-2 py-1 rounded">\1</code>', content)
+        paragraphs = content.split('\n\n')
+        return ''.join(f'<p class="mt-3 text-gray-200">{p.replace(chr(10), "<br>")}</p>' for p in paragraphs if p.strip())
 
-            # Step 2: Handle *italic text* patterns (but not single asterisks used for bullets)
-            content = re.sub(r'(?<!\w)\*([^*\n]+?)\*(?!\w)', r'<em class="text-purple-200">\1</em>', content)
-
-            # Step 3: Clean up bullet points - convert "* " at start of lines to clean headings
-            lines = content.split('\n')
-            formatted_lines = []
-
-            for line in lines:
-                stripped_line = line.strip()
-
-                # Check if this is a bullet point line
-                if stripped_line.startswith('* '):
-                    # Remove the bullet and format as a clean heading
-                    clean_text = stripped_line[2:].strip()  # Remove "* "
-                    # Check if it ends with a colon (likely a heading)
-                    if clean_text.endswith(':'):
-                        formatted_lines.append(
-                            f'<div class="clean-heading text-purple-300 font-bold mt-4 mb-2">{clean_text}</div>')
-                    else:
-                        formatted_lines.append(
-                            f'<div class="clean-heading text-purple-300 font-bold mt-3 mb-1">{clean_text}</div>')
-                elif stripped_line:
-                    formatted_lines.append(line)
-
-            content = '\n'.join(formatted_lines)
-
-            # Step 4: Handle inline code
-            content = re.sub(r'`(.*?)`', r'<code class="bg-gray-700 px-2 py-1 rounded text-purple-200">\1</code>',
-                             content)
-
-            # Step 5: Split into paragraphs and format remaining content
-            content_parts = content.split('\n\n')
-            paragraphs = []
-
-            for p in content_parts:
-                if p.strip() and not 'clean-heading' in p:
-                    safe_p = p.replace("\n", "<br>")
-                    paragraphs.append(f'<p class="mt-3 text-gray-200">{safe_p}</p>')
-                elif p.strip():
-                    paragraphs.append(p)
-
-            return ''.join(paragraphs)
-
-        except Exception as e:
-            logger.error(f"Error formatting explanation content: {e}", exc_info=True)
-            # Fallback: clean up all asterisks and format as simple paragraphs
-            fallback_content = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', content)  # Remove **bold**
-            fallback_content = re.sub(r'^\* (.+)', r'<div class="mt-2 font-bold text-purple-300">\1</div>',
-                                      fallback_content, flags=re.MULTILINE)  # Clean bullet points
-
-            return f'<div class="text-gray-200">{fallback_content.replace(chr(10), "<br>")}</div>'
-
-    def _format_code_content(self, content: str) -> str:
-        try:
-            # Step 1: Handle **bold text** patterns first
-            content = re.sub(r'\*\*(.*?)\*\*',
-                             r'<div class="code-heading text-red-300 font-bold mt-4 mb-2">\1</div>',
-                             content)
-
-            # Step 2: Clean up any remaining single asterisks used for bullet points
-            content = re.sub(r'^\* (.+)', r'<div class="code-bullet ml-4 mt-2 text-gray-200">• \1</div>',
-                             content, flags=re.MULTILINE)
-
-            # Step 3: Remove any stray symbols that might be causing issues
-            # Remove siren symbols and other unwanted characters
-            content = re.sub(r'🚨\s*', '', content)  # Remove siren emoji
-            content = re.sub(r'⚠️\s*', '', content)  # Remove warning emoji
-            content = re.sub(r'[🔴🟠🟡]\s*', '', content)  # Remove colored circles
-            content = re.sub(r'[\u2600-\u26FF\u2700-\u27BF]\s*', '', content)  # Remove misc symbols
-
-            lines = content.split('\n')
-            formatted_lines = []
-            in_code_block = False
-
-            for line in lines:
-                line_strip = line.strip()
-
-                # Handle code blocks
-                if line_strip.startswith('```'):
-                    if in_code_block:
-                        formatted_lines.append('</code></pre>')
-                        in_code_block = False
-                    else:
-                        lang = line_strip[3:].strip()
-                        lang_class = f'language-{lang}' if lang else ''
-                        formatted_lines.append(
-                            f'<pre class="bg-gray-900 p-3 rounded border border-red-500 mt-3 overflow-auto"><code class="text-red-200 {lang_class}">'
-                        )
-                        in_code_block = True
-                    continue
-
-                # If we're inside a code block, just add the line
+    def _format_code_content(self, content):
+        lines = content.split('\n')
+        formatted_lines = []
+        in_code_block = False
+        for line in lines:
+            if line.strip().startswith('```'):
                 if in_code_block:
-                    formatted_lines.append(f'{line}\n')
-                    continue
-
-                # Skip empty lines
-                if not line_strip:
-                    continue
-
-                # Handle lines that already have code-heading class
-                if 'code-heading' in line or 'code-bullet' in line:
-                    formatted_lines.append(line)
-                    continue
-
-                # Format different types of content based on keywords
-                line_lower = line_strip.lower()
-
-                # Error/Problem identification
-                if any(keyword in line_lower for keyword in
-                       ['error', 'bug', 'issue', 'problem', 'wrong', 'incorrect', 'fails', 'broken']):
-                    formatted_lines.append(
-                        '<div class="error-highlight p-3 bg-red-800 bg-opacity-50 rounded border border-red-500 mt-3">'
-                    )
-                    formatted_lines.append(f'<strong class="text-red-300">❌ Problem Identified:</strong>')
-                    formatted_lines.append(f'<p class="text-gray-200 mt-1">{line_strip}</p>')
-                    formatted_lines.append('</div>')
-
-                # Solution/Fix suggestions
-                elif any(keyword in line_lower for keyword in
-                         ['solution', 'fix', 'correct', 'resolve', 'should', 'replace', 'change']):
-                    formatted_lines.append(
-                        '<div class="solution-highlight p-3 bg-green-800 bg-opacity-50 rounded border border-green-500 mt-3">'
-                    )
-                    formatted_lines.append(f'<strong class="text-green-300">✅ Solution:</strong>')
-                    formatted_lines.append(f'<p class="text-gray-200 mt-1">{line_strip}</p>')
-                    formatted_lines.append('</div>')
-
-                # Optimization suggestions
-                elif any(keyword in line_lower for keyword in
-                         ['optimize', 'improve', 'better', 'recommend', 'suggest', 'enhancement']):
-                    formatted_lines.append(
-                        '<div class="optimization-highlight p-3 bg-blue-800 bg-opacity-50 rounded border border-blue-500 mt-3">'
-                    )
-                    formatted_lines.append(f'<strong class="text-blue-300">🔧 Optimization:</strong>')
-                    formatted_lines.append(f'<p class="text-gray-200 mt-1">{line_strip}</p>')
-                    formatted_lines.append('</div>')
-
-                # Warning/Caution
-                elif any(keyword in line_lower for keyword in
-                         ['warning', 'caution', 'careful', 'note', 'important', 'attention']):
-                    formatted_lines.append(
-                        '<div class="warning-highlight p-3 bg-yellow-800 bg-opacity-50 rounded border border-yellow-500 mt-3">'
-                    )
-                    formatted_lines.append(f'<strong class="text-yellow-300">⚠️ Important Note:</strong>')
-                    formatted_lines.append(f'<p class="text-gray-200 mt-1">{line_strip}</p>')
-                    formatted_lines.append('</div>')
-
-                # Code explanation or analysis
-                elif any(keyword in line_lower for keyword in
-                         ['code', 'function', 'method', 'class', 'variable', 'syntax']):
-                    formatted_lines.append(
-                        '<div class="code-analysis p-2 bg-gray-700 bg-opacity-50 rounded border border-gray-500 mt-2">'
-                    )
-                    formatted_lines.append(f'<span class="text-gray-300">📝 {line_strip}</span>')
-                    formatted_lines.append('</div>')
-
-                # Regular text
+                    formatted_lines.append('</code></pre>')
+                    in_code_block = False
                 else:
-                    formatted_lines.append(f'<p class="text-gray-200 mt-2 leading-relaxed">{line_strip}</p>')
-
-            # Close any open code block
+                    formatted_lines.append('<pre class="bg-gray-900 p-3 rounded border border-red-500 mt-3"><code class="text-red-200">')
+                    in_code_block = True
+                continue
             if in_code_block:
-                formatted_lines.append('</code></pre>')
+                formatted_lines.append(f'{self._escape_html(line)}\n')
+            else:
+                # Escape first, then apply bold markdown
+                safe_line = self._escape_html(line)
+                safe_line = re.sub(r'\*\*(.*?)\*\*', r'<strong class="text-red-300">\1</strong>', safe_line)
+                if safe_line.strip():
+                    formatted_lines.append(f'<p class="text-gray-200 mt-2">{safe_line}</p>')
+        if in_code_block: formatted_lines.append('</code></pre>')
+        return ''.join(formatted_lines)
 
-            return ''.join(formatted_lines)
+    def _format_resume_content(self, content):
+        lines = content.split('\n')
+        formatted_lines = []
+        for line in lines:
+            line = line.strip()
+            if not line: continue
+            # Escape first, then apply bold markdown
+            if line.startswith('* '):
+                safe = self._escape_html(line[2:].strip())
+                safe = re.sub(r'\*\*(.*?)\*\*', r'<strong class="text-yellow-300">\1</strong>', safe)
+                formatted_lines.append(f'<div class="ml-4 mt-2 text-gray-200">• {safe}</div>')
+            else:
+                safe = self._escape_html(line)
+                safe = re.sub(r'\*\*(.*?)\*\*', r'<strong class="text-yellow-300">\1</strong>', safe)
+                formatted_lines.append(f'<p class="text-gray-200 mt-2">{safe}</p>')
+        return ''.join(formatted_lines)
 
-        except Exception as e:
-            logger.error(f"Error formatting code content: {e}", exc_info=True)
-            # Fallback: Clean up symbols and asterisks
-            fallback_content = re.sub(r'\*\*(.*?)\*\*', r'<strong class="text-red-300">\1</strong>', content)
-            fallback_content = re.sub(r'^\* (.+)', r'<div class="mt-2 ml-4 text-gray-200">• \1</div>',
-                                      fallback_content, flags=re.MULTILINE)
-            # Remove unwanted symbols
-            fallback_content = re.sub(r'[🚨⚠️🔴🟠🟡]\s*', '', fallback_content)
-            fallback_content = re.sub(r'[\u2600-\u26FF\u2700-\u27BF]\s*', '', fallback_content)
+    def _escape_html(self, text):
+        return text.replace('&','&amp;').replace('<','&lt;').replace('>','&gt;').replace('"','&quot;').replace("'","&#x27;")
 
-            return f'<div class="code-content">{fallback_content.replace(chr(10), "<br>")}</div>'
-
-    def _format_resume_content(self, content: str) -> str:
-        try:
-            # Step 1: Handle **bold headings** first (convert to proper headings)
-            content = re.sub(r'\*\*(.*?)\*\*',
-                             r'<div class="section-heading text-yellow-300 font-bold text-lg mt-4 mb-3 border-b border-yellow-600 pb-1">\1</div>',
-                             content)
-
-            # Step 2: Handle single * bullet points and convert to clean format
-            lines = content.split('\n')
-            formatted_lines = []
-
-            for line in lines:
-                stripped_line = line.strip()
-
-                # Skip empty lines
-                if not stripped_line:
-                    continue
-
-                # Handle bullet points that start with "* **"
-                if stripped_line.startswith('* **') and stripped_line.endswith('**'):
-                    # Extract the heading text between ** **
-                    heading_match = re.match(r'\* \*\*(.*?)\*\*(.*)', stripped_line)
-                    if heading_match:
-                        heading_text = heading_match.group(1).strip()
-                        remaining_text = heading_match.group(2).strip()
-                        formatted_lines.append(
-                            f'<div class="subsection-heading text-yellow-400 font-semibold mt-3 mb-2">📋 {heading_text}</div>'
-                        )
-                        if remaining_text:
-                            formatted_lines.append(f'<p class="text-gray-200 ml-4">{remaining_text}</p>')
-                    continue
-
-                # Handle regular bullet points that start with "*"
-                elif stripped_line.startswith('* '):
-                    bullet_text = stripped_line[2:].strip()  # Remove "* "
-
-                    # Check if this line contains specific keywords for special formatting
-                    if any(keyword in bullet_text.lower() for keyword in ['score', 'rating', '/10', '%', 'overall']):
-                        formatted_lines.append(
-                            '<div class="score-section p-3 bg-yellow-800 bg-opacity-50 rounded border border-yellow-500 mt-3">'
-                        )
-                        formatted_lines.append(f'<strong class="text-yellow-300">📊 {bullet_text}</strong>')
-                        formatted_lines.append('</div>')
-
-                    elif any(keyword in bullet_text.lower() for keyword in
-                             ['strength', 'good', 'excellent', 'strong', 'experience', 'expertise']):
-                        formatted_lines.append(
-                            '<div class="strength-item p-2 bg-green-800 bg-opacity-30 rounded border border-green-600 mt-2 ml-4">'
-                        )
-                        formatted_lines.append(f'<span class="text-green-300">✅ {bullet_text}</span>')
-                        formatted_lines.append('</div>')
-
-                    elif any(keyword in bullet_text.lower() for keyword in
-                             ['improve', 'weak', 'lacking', 'missing', 'recommend', 'suggest']):
-                        formatted_lines.append(
-                            '<div class="improvement-item p-2 bg-orange-800 bg-opacity-30 rounded border border-orange-600 mt-2 ml-4">'
-                        )
-                        formatted_lines.append(f'<span class="text-orange-300">📈 {bullet_text}</span>')
-                        formatted_lines.append('</div>')
-
-                    else:
-                        # Regular bullet point
-                        formatted_lines.append(
-                            f'<div class="bullet-point ml-4 mt-2 text-gray-200">• {bullet_text}</div>'
-                        )
-
-                # Handle lines that already have section-heading class (from **bold** conversion)
-                elif 'section-heading' in line:
-                    formatted_lines.append(line)
-
-                # Handle regular text paragraphs
-                else:
-                    # Check for special content in regular paragraphs
-                    if any(keyword in stripped_line.lower() for keyword in ['score', 'rating', '/10', '%']):
-                        formatted_lines.append(
-                            '<div class="score-section p-3 bg-yellow-800 bg-opacity-50 rounded border border-yellow-500 mt-3">'
-                        )
-                        formatted_lines.append(f'<strong class="text-yellow-300">📊 {stripped_line}</strong>')
-                        formatted_lines.append('</div>')
-                    else:
-                        formatted_lines.append(f'<p class="text-gray-200 mt-2 leading-relaxed">{stripped_line}</p>')
-
-            return ''.join(formatted_lines)
-
-        except Exception as e:
-            logger.error(f"Error formatting resume content: {e}", exc_info=True)
-            # Fallback: Clean up asterisks and format as simple content
-            fallback_content = re.sub(r'\*\*(.*?)\*\*', r'<strong class="text-yellow-300">\1</strong>', content)
-            fallback_content = re.sub(r'^\* (.+)', r'<div class="mt-2 ml-4 text-gray-200">• \1</div>',
-                                      fallback_content, flags=re.MULTILINE)
-
-            return f'<div class="resume-content">{fallback_content.replace(chr(10), "<br>")}</div>'
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 def initialize_history_file():
-    """Initialize history file with header if it doesn't exist"""
     if not os.path.exists(HISTORY_FILE):
         try:
             with open(HISTORY_FILE, 'w', newline='', encoding='utf-8') as f:
-                writer = csv.writer(f)
-                writer.writerow(['timestamp', 'mode', 'query', 'response'])
-            logger.info(f"History file '{HISTORY_FILE}' created with header.")
+                csv.writer(f).writerow(['timestamp', 'mode', 'query', 'response'])
         except IOError as e:
-            logger.error(f"Failed to create history file '{HISTORY_FILE}': {e}", exc_info=True)
+            logger.error(f"Failed to create history file: {e}")
 
 
-# Initialize required files and directories
 def setup_app():
-    """Setup function called at module level"""
     try:
         initialize_history_file()
-        if not os.path.exists("projects"):
-            os.makedirs("projects", exist_ok=True)
-            logger.info("Created 'projects' directory.")
-        if not os.path.exists(UPLOAD_FOLDER):
-            os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-            logger.info("Created uploads directory.")
+        os.makedirs("projects", exist_ok=True)
+        os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+        logger.info("Application setup complete")
     except Exception as e:
-        logger.error(f"Error during app setup: {e}", exc_info=True)
+        logger.error(f"Setup error: {e}", exc_info=True)
 
 
-# Setup app immediately when module is imported
 setup_app()
 
-# Initialize the TRON instance with error handling
 try:
     tron_instance = TRONAssistant()
-    logger.info("TRON Assistant initialized successfully.")
+    logger.info("TRON Assistant initialized")
 except Exception as e:
-    logger.error(f"Failed to initialize TRON Assistant: {e}", exc_info=True)
-    # Create a minimal fallback instance
+    logger.error(f"Failed to initialize TRON: {e}", exc_info=True)
     tron_instance = None
 
 
+# ── Flask Routes ──────────────────────────────────────────────────────────────
+
 @app.route('/')
 def serve_index():
-    html_files = ['index.html', 'tron_assistant_colored.html', 'Index.html']
-    for html_file in html_files:
+    for html_file in ['index.html', 'tron_assistant_colored.html', 'Index.html']:
         if os.path.exists(html_file):
-            logger.info(f"Serving {html_file}")
             return send_from_directory('.', html_file)
-    logger.error("No HTML file found in project directory to serve.")
-    return abort(404, description="HTML file not found in project directory")
+    return abort(404, description="HTML file not found")
 
 
 @app.route('/favicon.ico')
 def serve_favicon():
     if os.path.exists('favicon.ico'):
         return send_from_directory('.', 'favicon.ico', mimetype='image/x-icon')
-    logger.debug("favicon.ico not found, returning 204 No Content.")
     return '', 204
 
 
-# Health check endpoint for Render - CRITICAL FOR PORT DETECTION
 @app.route('/health')
 def health_check():
     return jsonify({
         'status': 'healthy',
         'timestamp': datetime.now().isoformat(),
         'port': os.environ.get('PORT', 'unknown'),
-        'message': 'TRON Assistant is running',
         'tron_status': 'initialized' if tron_instance else 'failed'
     })
 
 
-# Add a simple test endpoint that responds quickly
 @app.route('/ping')
 def ping():
     return jsonify({'status': 'pong', 'timestamp': datetime.now().isoformat()})
@@ -755,94 +384,83 @@ def ping():
 def process_query():
     try:
         if not tron_instance:
-            logger.error("TRON instance not available.")
-            return jsonify(
-                {'error': 'Service temporarily unavailable. Please try again later.', 'status': 'error'}), 503
+            return jsonify({'error': 'Service unavailable', 'status': 'error'}), 503
 
         data = request.get_json()
         if not data:
-            logger.warning("Received /api/process request with no JSON data.")
-            return jsonify({'error': 'No JSON data received', 'status': 'error'}), 400
+            return jsonify({'error': 'No data received', 'status': 'error'}), 400
 
         mode = data.get('mode')
         query = data.get('query', '')
-        input_mode = data.get('inputMode', 'text')
+        input_mode = data.get('input_mode', 'text')  # text | speech | hybrid
 
-        logger.info(f"Processing request - Mode: {mode}, Query: {query[:100]}..., Input Mode: {input_mode}")
+        logger.info(f"Processing: mode={mode}, input_mode={input_mode}, query length={len(query)}")
 
         mode_map = {
             'quiz': ("Quiz Generator", quiz_generator.generate_quiz),
             'doubt': ("Doubt Solver", doubt_solver.solve_doubt),
-            'code': ("Code Debugger", lambda chat, code_query: code_debugger.explain_or_debug_code(chat, code_query)),
+            'code': ("Code Debugger", lambda chat, q: code_debugger.explain_or_debug_code(chat, q)),
             'resume': ("Resume Analyzer", resume_analyzer.analyze_resume)
         }
 
         if mode not in mode_map:
-            logger.error(f"Invalid mode specified: {mode}")
             return jsonify({'error': f'Invalid mode: {mode}', 'status': 'error'}), 400
 
         if not query and mode != 'resume':
-            logger.warning("Query is empty for non-resume mode.")
-            return jsonify({'error': 'Query is required for selected module.', 'status': 'error'}), 400
+            return jsonify({'error': 'Query required', 'status': 'error'}), 400
 
         if mode == 'resume' and not query:
             if not getattr(resume_analyzer, 'LOADED_RESUME', None):
-                logger.warning("Resume mode selected, but no query provided and no resume file loaded.")
-                return jsonify(
-                    {'error': 'Please upload a resume file or paste resume content.', 'status': 'error'}), 400
+                return jsonify({'error': 'Please upload a resume file or paste resume content.', 'status': 'error'}), 400
             query = resume_analyzer.LOADED_RESUME
 
         mode_name, handler = mode_map[mode]
-        logger.debug(f"Calling {mode_name} handler with query length {len(query)}.")
 
-        raw_response = ""
         try:
             raw_response = handler(tron_instance.response_handler.chat, query)
             if not raw_response or not raw_response.strip():
-                logger.warning("AI raw_response is empty or only whitespace.")
-                raw_response = "No meaningful response generated by the AI. Please try a different query."
-        except Exception as ai_e:
-            logger.error(f"Error during AI handler call for mode {mode}: {ai_e}", exc_info=True)
-            error_msg = str(ai_e).lower()
-            if 'quota' in error_msg or 'limit' in error_msg:
-                raw_response = "API quota exceeded. Please try again later or check your Google AI Studio quota limits."
-            else:
-                raw_response = f"AI processing error: {str(ai_e)}. Please try again or contact support."
+                raw_response = "No response generated. Please try again."
+        except Exception as ai_error:
+            logger.error(f"AI error: {ai_error}", exc_info=True)
+            error_msg = str(ai_error).lower()
+            raw_response = ("API quota exceeded. Please try again later."
+                           if 'quota' in error_msg or 'limit' in error_msg
+                           else f"AI processing error: {str(ai_error)}")
 
         formatted_response = tron_instance.format_response_for_web(raw_response, mode)
         tron_instance.save_history(mode_name, query, raw_response)
 
-        response_data = {
+        return jsonify({
             'response': formatted_response,
             'raw_response': raw_response,
             'mode': mode_name,
+            'input_mode': input_mode,
             'timestamp': datetime.now().isoformat(),
             'status': 'success'
-        }
+        })
 
-        logger.info(f"Successfully processed {mode_name} request. Final response length: {len(raw_response)}.")
-        return jsonify(response_data)
-
-    except json.JSONDecodeError:
-        logger.error("Failed to decode JSON from request.")
-        return jsonify({'error': 'Invalid JSON format', 'status': 'error'}), 400
     except Exception as e:
-        logger.error(f"Unhandled error in /api/process: {str(e)}", exc_info=True)
-        return jsonify({'error': f'Internal server error: {str(e)}', 'status': 'error'}), 500
+        logger.error(f"Process error: {e}", exc_info=True)
+        return jsonify({'error': str(e), 'status': 'error'}), 500
+
+
+@app.route('/api/speech/transcribe', methods=['POST'])
+def speech_transcribe():
+    """
+    Lightweight endpoint — transcription is done in the browser via Web Speech API.
+    Frontend sends the already-transcribed text in the normal /api/process call.
+    This endpoint is kept for compatibility / future server-side transcription.
+    """
+    return jsonify({
+        'status': 'info',
+        'message': 'Speech transcription is handled by the browser Web Speech API.',
+        'note': 'Send the transcribed text via /api/process as a normal query.'
+    })
 
 
 @app.route('/api/speech/listen', methods=['POST'])
 def speech_listen():
-    try:
-        logger.info("Speech recognition request received - handled by frontend.")
-        return jsonify({
-            'error': 'Speech recognition handled by frontend browser APIs',
-            'status': 'info',
-            'message': 'Use browser Web Speech API for audio input'
-        }), 200
-    except Exception as e:
-        logger.error(f"Error in /api/speech/listen: {str(e)}", exc_info=True)
-        return jsonify({'error': f'Speech recognition error: {str(e)}', 'status': 'error'}), 500
+    return jsonify({'status': 'info', 'message': 'Speech recognition handled by frontend'})
 
 
 @app.route('/api/speech/speak', methods=['POST'])
@@ -850,42 +468,46 @@ def speech_speak():
     try:
         data = request.get_json()
         if not data:
-            logger.warning("No JSON data received for speech speak request.")
-            return jsonify({'error': 'No JSON data received', 'status': 'error'}), 400
-
+            return jsonify({'error': 'No data received', 'status': 'error'}), 400
         text = data.get('text', '')
-
         if not text:
-            logger.warning("Received empty text for speech generation.")
-            return jsonify({'error': 'No text provided for speech.', 'status': 'error'}), 400
-
-        logger.info(f"Received text to speak (handled by frontend): {text[:100]}...")
-
-        return jsonify({
-            'status': 'success',
-            'message': 'Speech handled by frontend browser APIs',
-            'text': text
-        })
-
-    except json.JSONDecodeError:
-        logger.error("Failed to decode JSON from speech speak request.", exc_info=True)
-        return jsonify({'error': 'Invalid JSON format', 'status': 'error'}), 400
+            return jsonify({'error': 'No text provided', 'status': 'error'}), 400
+        return jsonify({'status': 'success', 'message': 'Speech handled by frontend', 'text': text})
     except Exception as e:
-        logger.error(f"Error in /api/speech/speak: {str(e)}", exc_info=True)
-        return jsonify({'error': f'Text-to-speech error: {str(e)}', 'status': 'error'}), 500
+        return jsonify({'error': str(e), 'status': 'error'}), 500
 
 
 @app.route('/api/speech/stop', methods=['POST'])
 def speech_stop():
+    return jsonify({'status': 'success', 'message': 'Speech stop handled by frontend'})
+
+
+@app.route('/api/upload', methods=['POST'])
+def upload_file():
     try:
-        logger.info("Stop speech request received (handled by frontend).")
-        return jsonify({
-            'status': 'success',
-            'message': 'Speech stop handled by frontend browser APIs'
-        })
+        if 'file' not in request.files:
+            return jsonify({'error': 'No file provided', 'status': 'error'}), 400
+        file = request.files['file']
+        if not file.filename:
+            return jsonify({'error': 'No file selected', 'status': 'error'}), 400
+        if file and allowed_file(file.filename):
+            filename = file.filename
+            filepath = os.path.join(UPLOAD_FOLDER, filename)
+            file.save(filepath)
+            logger.info(f"File uploaded: {filename}")
+            if filename.lower().endswith(('.pdf', '.doc', '.docx')):
+                try:
+                    extracted_text = resume_analyzer.extract_text_from_file(filepath)
+                    resume_analyzer.LOADED_RESUME = extracted_text
+                    return jsonify({'status': 'success', 'message': f'File {filename} uploaded and processed', 'filename': filename})
+                except Exception as e:
+                    logger.error(f"Text extraction failed: {e}", exc_info=True)
+                    return jsonify({'status': 'error', 'message': f'Failed to extract text: {str(e)}'}), 400
+            return jsonify({'status': 'success', 'message': f'File {filename} uploaded', 'filename': filename})
+        return jsonify({'error': 'Invalid file type', 'status': 'error'}), 400
     except Exception as e:
-        logger.error(f"Error in /api/speech/stop: {str(e)}", exc_info=True)
-        return jsonify({'error': f'Error stopping speech: {str(e)}', 'status': 'error'}), 500
+        logger.error(f"Upload error: {e}", exc_info=True)
+        return jsonify({'error': str(e), 'status': 'error'}), 500
 
 
 @app.route('/api/history', methods=['GET'])
@@ -895,7 +517,7 @@ def get_history():
         if os.path.exists(HISTORY_FILE):
             with open(HISTORY_FILE, 'r', encoding='utf-8') as f:
                 reader = csv.reader(f)
-                next(reader, None)  # Skip header
+                next(reader, None)
                 for row in reader:
                     if len(row) >= 4:
                         history_data.append({
@@ -905,15 +527,9 @@ def get_history():
                             'response': row[3][:200] + '...' if len(row[3]) > 200 else row[3]
                         })
         history_data.reverse()
-        history_data = history_data[:20]
-        logger.info(f"History loaded: {len(history_data)} entries.")
-        return jsonify({'history': history_data, 'status': 'success'})
-    except IOError as e:
-        logger.error(f"Failed to read history file: {e}", exc_info=True)
-        return jsonify({'error': 'Failed to load history', 'status': 'error'}), 500
+        return jsonify({'history': history_data[:20], 'status': 'success'})
     except Exception as e:
-        logger.error(f"Unhandled error in /api/history: {str(e)}", exc_info=True)
-        return jsonify({'error': f'Internal server error: {str(e)}', 'status': 'error'}), 500
+        return jsonify({'error': str(e), 'status': 'error'}), 500
 
 
 @app.route('/api/history/clear', methods=['POST'])
@@ -922,76 +538,20 @@ def clear_history():
         if os.path.exists(HISTORY_FILE):
             os.remove(HISTORY_FILE)
             initialize_history_file()
-            logger.info("History file cleared and re-initialized.")
-        else:
-            logger.info("History file did not exist, no action needed for clear.")
-        return jsonify({'status': 'success', 'message': 'History cleared.'})
+        return jsonify({'status': 'success', 'message': 'History cleared'})
     except Exception as e:
-        logger.error(f"Error clearing history: {str(e)}", exc_info=True)
-        return jsonify({'error': f'Error clearing history: {str(e)}', 'status': 'error'}), 500
-
-
-@app.route('/api/upload', methods=['POST'])
-def upload_file():
-    try:
-        if 'file' not in request.files:
-            logger.warning("No file part in upload request.")
-            return jsonify({'error': 'No file part', 'status': 'error'}), 400
-
-        file = request.files['file']
-        if file.filename == '':
-            logger.warning("No selected file in upload request.")
-            return jsonify({'error': 'No selected file', 'status': 'error'}), 400
-
-        if file and allowed_file(file.filename):
-            filename = file.filename
-            file_path = os.path.join(UPLOAD_FOLDER, filename)
-            file.save(file_path)
-            logger.info(f"File uploaded successfully: {filename}")
-
-            if filename.lower().endswith(('.pdf', '.doc', '.docx')):
-                try:
-                    extracted_text = resume_analyzer.extract_text_from_file(file_path)
-                    resume_analyzer.LOADED_RESUME = extracted_text
-                    logger.info(f"Text extracted from resume file: {filename}")
-                    return jsonify({
-                        'status': 'success',
-                        'message': f'File {filename} uploaded and text extracted successfully.',
-                        'filename': filename
-                    })
-                except Exception as e:
-                    logger.error(f"Failed to extract text from {filename}: {e}", exc_info=True)
-                    return jsonify({
-                        'status': 'error',
-                        'message': f'File uploaded, but failed to extract text: {str(e)}',
-                        'filename': filename
-                    }), 400
-            else:
-                logger.info(f"Uploaded file {filename} is not a supported resume format. Text extraction skipped.")
-                return jsonify({
-                    'status': 'success',
-                    'message': f'File {filename} uploaded successfully, but not processed as a resume.',
-                    'filename': filename
-                })
-        else:
-            logger.warning(f"Invalid file type uploaded: {file.filename}")
-            return jsonify({'error': 'Invalid file type. Allowed: pdf, doc, docx.', 'status': 'error'}), 400
-
-    except Exception as e:
-        logger.error(f"Error in /api/upload: {str(e)}", exc_info=True)
-        return jsonify({'error': f'File upload error: {str(e)}', 'status': 'error'}), 500
+        return jsonify({'error': str(e), 'status': 'error'}), 500
 
 
 @app.route('/api/status', methods=['GET'])
 def get_status():
     ai_status = 'available' if tron_instance and tron_instance.response_handler.model else 'unavailable'
-    logger.debug(f"Current status - AI: {ai_status}")
     return jsonify({
         'status': 'online',
         'timestamp': datetime.now().isoformat(),
         'services': {
-            'speech_recognition': 'frontend_handled',
-            'text_to_speech': 'frontend_handled',
+            'speech_recognition': 'browser_web_speech_api',
+            'text_to_speech': 'browser_speech_synthesis',
             'ai_processing': ai_status
         }
     })
@@ -999,62 +559,26 @@ def get_status():
 
 @app.errorhandler(400)
 def bad_request(error):
-    logger.error(f"400 Bad Request: {error.description if hasattr(error, 'description') else str(error)}",
-                 exc_info=True)
-    return jsonify({
-        'error': error.description if hasattr(error, 'description') else 'Bad request',
-        'status': 'error'
-    }), 400
-
+    return jsonify({'error': getattr(error, 'description', 'Bad request'), 'status': 'error'}), 400
 
 @app.errorhandler(404)
 def not_found(error):
-    logger.error(f"404 Not Found: {error.description if hasattr(error, 'description') else str(error)}", exc_info=True)
-    return jsonify({
-        'error': error.description if hasattr(error, 'description') else 'Resource not found',
-        'status': 'error'
-    }), 404
-
+    return jsonify({'error': getattr(error, 'description', 'Not found'), 'status': 'error'}), 404
 
 @app.errorhandler(500)
 def internal_error(error):
-    logger.error(f"500 Internal Server Error: {error.description if hasattr(error, 'description') else str(error)}",
-                 exc_info=True)
-    return jsonify({
-        'error': 'Internal server error. Please try again later.',
-        'status': 'error'
-    }), 500
+    return jsonify({'error': 'Internal server error', 'status': 'error'}), 500
 
 
-# Application factory pattern for better deployment
-def create_app():
-    """Application factory pattern for better deployment"""
-    return app
-
-
-# WSGI callable - CRITICAL for Gunicorn
 application = app
-
-# Ensure app is available at module level for Render
-app = app
 
 if __name__ == "__main__":
     try:
-        # Enhanced port configuration for Render deployment
         port = int(os.environ.get('PORT', 10000))
-
-        logger.info("Starting TRON Assistant Flask server...")
-        logger.info(f"Server will be accessible on port: {port}")
-
-        # Always run the app directly for better port binding
+        logger.info(f"Starting TRON Assistant server on port {port}")
         app.run(debug=False, host='0.0.0.0', port=port, threaded=True)
-
     except KeyboardInterrupt:
-        logger.info("Server interrupted by user (KeyboardInterrupt).")
-        print("\nServer interrupted by user.")
+        logger.info("Server interrupted by user")
     except Exception as e:
-        logger.error(f"Fatal server startup error: {e}", exc_info=True)
-        print(f"Server error occurred: {e}")
-        # Only exit when running directly, not when imported by Gunicorn
-        if __name__ == "__main__":
-            sys.exit(1)
+        logger.error(f"Server error: {e}", exc_info=True)
+        sys.exit(1)
