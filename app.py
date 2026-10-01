@@ -26,14 +26,17 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # =====================================================
-# 🔑 API KEY CONFIGURATION
-# Paste your Groq API key below (get it from https://console.groq.com)
+# 🔑 API KEY + MODEL CONFIGURATION
+# Set GROQ_API_KEY as an environment variable (never hardcode it).
+# Get a key from https://console.groq.com
+# Change the model without touching code via GROQ_MODEL.
 # =====================================================
-GROQ_API_KEY = "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"   # <-- PASTE YOUR GROQ API KEY HERE e.g. "gsk_xxxxxxxxxxxx"
+GROQ_API_KEY = "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"   # <-- PASTE YOUR NEW GROQ API KEY HERE, e.g. "gsk_xxxxxxxxxxxx"
+GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 
 # Falls back to environment variable if the field above is left empty
 if not GROQ_API_KEY:
-    GROQ_API_KEY = os.environ.get('GROQ_API_KEY')
+    GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 if not GROQ_API_KEY:
     logger.error("GROQ_API_KEY is not set. Paste your key in the field above.")
 
@@ -101,7 +104,7 @@ class ResponseHandler:
             self.history = []
             self.model = True
             self.chat = self
-            logger.info("Groq model initialized successfully")
+            logger.info(f"Groq model initialized successfully ({GROQ_MODEL})")
         except Exception as e:
             logger.error(f"Failed to initialize Groq model: {e}", exc_info=True)
             self.client = None
@@ -127,20 +130,28 @@ class ResponseHandler:
 
                 self.history.append({"role": "user", "content": prompt})
                 response = self.client.chat.completions.create(
-                    model="llama-3.3-70b-versatile",
+                    model=GROQ_MODEL,
                     messages=self.history,
-                    max_tokens=1000,
+                    max_tokens=2000,
                     temperature=0.7,
                 )
-                response_text = response.choices[0].message.content.strip()
+                response_text = (response.choices[0].message.content or "").strip()
                 self.history.append({"role": "assistant", "content": response_text})
                 if len(self.history) > 20:
                     self.history = self.history[-20:]
                 return response_text or "No meaningful response generated."
 
             except Exception as e:
+                # Drop the user message we just added so history stays clean on failure
+                if self.history and self.history[-1].get("role") == "user":
+                    self.history.pop()
+
                 error_message = str(e).lower()
-                if 'quota' in error_message or 'rate' in error_message or 'limit' in error_message:
+                if 'model_not_found' in error_message or 'decommissioned' in error_message:
+                    # Retrying will never fix a retired model
+                    logger.error(f"Model unavailable: {e}")
+                    return "Error: AI model unavailable. Update GROQ_MODEL."
+                elif 'quota' in error_message or 'rate' in error_message or 'limit' in error_message:
                     logger.error(f"Rate limit error (attempt {attempt + 1}): {e}")
                     if attempt < 2:
                         time.sleep(2 ** (attempt + 1))
@@ -153,7 +164,7 @@ class ResponseHandler:
                     if attempt < 2:
                         time.sleep(2)
                         continue
-                    return f"Error: Failed after 3 attempts."
+                    return "Error: Failed after 3 attempts."
 
         return "Error: Maximum retries reached."
 
