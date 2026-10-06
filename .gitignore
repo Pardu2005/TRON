@@ -1,0 +1,6 @@
+uploads/
+projects/
+tron_history.csv
+tron_server.log
+__pycache__/
+.venv/
