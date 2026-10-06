@@ -31,14 +31,15 @@ logger = logging.getLogger(__name__)
 # Get a key from https://console.groq.com
 # Change the model without touching code via GROQ_MODEL.
 # =====================================================
-GROQ_API_KEY = "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"   # <-- PASTE YOUR NEW GROQ API KEY HERE, e.g. "gsk_xxxxxxxxxxxx"
+try:
+    from config_local import GROQ_API_KEY   # local file, never committed
+except ImportError:
+    GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
+
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 
-# Falls back to environment variable if the field above is left empty
 if not GROQ_API_KEY:
-    GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
-if not GROQ_API_KEY:
-    logger.error("GROQ_API_KEY is not set. Paste your key in the field above.")
+    logger.error("GROQ_API_KEY is not set. Create config_local.py or set the env var.")
 
 HISTORY_FILE = "tron_history.csv"
 MAX_HISTORY_ENTRIES = 1000
